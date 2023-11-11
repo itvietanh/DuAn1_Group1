@@ -42,7 +42,7 @@
                                             <td><?php echo $id_genre?></td>
                                             <td><?php echo "$start_time" . " - " . "$end_time"?></td>
                                             <td><?php echo $image?></td>
-                                            <td><a href="index.php?act=edit_film&id=<?php echo $id?>"><input type="button" name="btn_edit" value="Sửa"></a> | <a href=""><input type="button" value="Xóa"></a></td>
+                                            <td><a href="index.php?act=edit_film&id=<?php echo $id?>"><input type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id?>"><input type="button" name="btn_delete" value="Xóa"></a></td>
                                         </tr>
                                 <?php
                                     }
@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-5">
-                            <a href="index.php?act=add_film"><input type="button" name="" value="Thêm Phim"></a>
+                            <a href="index.php?act=add_film"><input type="button" name="add_film" value="Thêm Phim"></a>
                         </div>
 <!--                        <div class="col-sm-12 col-md-7">-->
 <!--                            <div class="dataTables_paginate paging_simple_numbers" id="zero_config_paginate">-->

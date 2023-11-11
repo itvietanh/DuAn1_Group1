@@ -21,7 +21,7 @@
                     <nav class="header_menu">
                         <li><a href="index.php?act=dashboard">Dashboard</a></li>
                         <li><a href="index.php?act=quanlyphim">Quản lý phim</a></li>
-                        <li><a href="">Quản lý loại phim</a></li>
+                        <li><a href="index.php?act=quanlyloaiphim">Quản lý loại phim</a></li>
                         <li><a href="">Quản lý vé</a></li>
                         <li><a href="">Quản lý ghế</a></li>
                     </nav>

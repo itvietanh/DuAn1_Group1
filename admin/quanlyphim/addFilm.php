@@ -18,20 +18,22 @@
                 <div class="form-group row">
                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Thể Loại Phim</label>
                     <div class="col-sm-9">
-                        <select class="form-control" style="width: 160px !important;" name="" id="">
+                        <select class="form-control" name="genre">
                             <option value="">--- Lựa Chọn ---</option>
                             <?php foreach ($list_genre as $value) {
                                 extract($value);
                                 ?>
                                 <option value="<?php echo $id?>"><?php echo $name?></option>
+
                                 <?php
                             }?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email1" class="col-sm-3 text-right control-label col-form-label">Khung Giờ Chiếu</label>
                     <div class="col-sm-9">
-                        <select class="form-control" style="width: 160px !important;" name="" id="">
+                        <select class="form-control" name="showTimeFrame">
                             <option value="">--- Lựa Chọn ---</option>
                             <?php foreach ($list_showTime as $value) {
                                 extract($value);
@@ -45,15 +47,20 @@
                 <div class="form-group row">
                     <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Banner</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="cono1">
+                        <input type="file" class="form-control" name="image" id="cono1">
                     </div>
                 </div>
             </div>
             <div class="border-top">
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <input type="submit" class="btn btn-primary" name="btn_add" value="Thêm Phim">
                 </div>
             </div>
         </form>
+        <?php
+        if (isset($thongbao) && ($thongbao) != "") {
+            echo $thongbao;
+        }
+        ?>
     </div>
 </div>
