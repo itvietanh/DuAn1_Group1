@@ -1,4 +1,6 @@
 <?php
+include "../model/pdo.php";
+include "../model/film.php";
 include "header.php";
 //Controller
 if  (isset($_GET['act']) && $_GET['act'] != "") {
@@ -9,8 +11,13 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             break;
 
         case 'quanlyphim':
+            $list_film = loadall_film();
             include 'quanlyphim/quanlyphim.php';
             break;
+        case 'add_film':
+            if (isset($_GET['btn_add'])) {
+
+            }
         default:
             include 'home.php';
             break;
