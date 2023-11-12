@@ -28,17 +28,17 @@
 </head>
 
 <body>
-<!-- ==========Preloader========== -->
-<!--<div class="preloader">-->
-<!--    <div class="preloader-inner">-->
-<!--        <div class="preloader-icon">-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- ==========Preloader========== -->
-<!-- ==========Overlay========== -->
+<!-- ==========Preloader==========-->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- ==========Preloader==========-->
+<!-- ==========Overlay==========-->
 <div class="overlay"></div>
 <a href="#0" class="scrollToTop">
     <i class="fas fa-angle-up"></i>
@@ -57,10 +57,10 @@
             </div>
             <ul class="menu">
                 <li>
-                    <a href="#0" class="active">Home</a>
+                    <a href="index.php?act=home" class="active">Home</a>
                 </li>
                 <li>
-                    <a href="#0">movies</a>
+                    <a href="index.php?act=movie">movies</a>
                     <ul class="submenu">
                         <li>
                             <a href="movie-grid.html">Movie Grid</a>
@@ -114,7 +114,7 @@
             </ul>
             <div class="login">
                 <li class="header-button pr-0">
-                    <a href="sign-up.html">Login</a>
+                    <a href="index.php?act=login">Login</a>
                 </li>
             </div>
 <!--            <div class="header-bar d-lg-none">-->

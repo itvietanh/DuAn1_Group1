@@ -8,19 +8,19 @@
                         <ul>
                             <li>
                                 <a href="#0">
-                                    <span class="img"><img src="assets/images/sidebar/icons/sidebar01.png" alt="sidebar"></span>
+                                    <span class="img"><img src="../assets/images/sidebar/icons/sidebar01.png" alt="sidebar"></span>
                                     <span class="cate">24X7 Care</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#0">
-                                    <span class="img"><img src="assets/images/sidebar/icons/sidebar02.png" alt="sidebar"></span>
+                                    <span class="img"><img src="../assets/images/sidebar/icons/sidebar02.png" alt="sidebar"></span>
                                     <span class="cate">100% Assurance</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#0">
-                                    <span class="img"><img src="assets/images/sidebar/icons/sidebar03.png" alt="sidebar"></span>
+                                    <span class="img"><img src="../assets/images/sidebar/icons/sidebar03.png" alt="sidebar"></span>
                                     <span class="cate">Our Promise</span>
                                 </a>
                             </li>
@@ -30,7 +30,7 @@
                 <div class="widget-1 widget-banner">
                     <div class="widget-1-body">
                         <a href="#0">
-                            <img src="assets/images/sidebar/banner/banner01.jpg" alt="banner">
+                            <img src="../assets/images/sidebar/banner/banner01.jpg" alt="banner">
                         </a>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                 <div class="widget-1 widget-banner">
                     <div class="widget-1-body">
                         <a href="#0">
-                            <img src="assets/images/sidebar/banner/banner02.jpg" alt="banner">
+                            <img src="../assets/images/sidebar/banner/banner02.jpg" alt="banner">
                         </a>
                     </div>
                 </div>
@@ -83,24 +83,24 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="movie-grid">
                                 <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="assets/images/movie/movie01.jpg" alt="movie">
+                                    <a href="index.php?act=ct_phim">
+                                        <img src="../assets/images/movie/movie01.jpg" alt="movie">
                                     </a>
                                 </div>
                                 <div class="movie-content bg-one">
                                     <h5 class="title m-0">
-                                        <a href="#0">alone</a>
+                                        <a href="index.php?act=ct_phim">alone</a>
                                     </h5>
                                     <ul class="movie-rating-percent">
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/tomato.png" alt="movie">
+                                                <img src="../assets/images/movie/tomato.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/cake.png" alt="movie">
+                                                <img src="../assets/images/movie/cake.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
@@ -111,24 +111,24 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="movie-grid">
                                 <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="assets/images/movie/movie02.jpg" alt="movie">
+                                    <a href="index.php?act=ct_phim">
+                                        <img src="../assets/images/movie/movie02.jpg" alt="movie">
                                     </a>
                                 </div>
                                 <div class="movie-content bg-one">
                                     <h5 class="title m-0">
-                                        <a href="#0">mars</a>
+                                        <a href="index.php?act=ct_phim">mars</a>
                                     </h5>
                                     <ul class="movie-rating-percent">
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/tomato.png" alt="movie">
+                                                <img src="../assets/images/movie/tomato.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/cake.png" alt="movie">
+                                                <img src="../assets/images/movie/cake.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
@@ -139,24 +139,24 @@
                         <div class="col-sm-6 col-lg-4">
                             <div class="movie-grid">
                                 <div class="movie-thumb c-thumb">
-                                    <a href="#0">
-                                        <img src="assets/images/movie/movie03.jpg" alt="movie">
+                                    <a href="index.php?act=ct_phim">
+                                        <img src="../assets/images/movie/movie03.jpg" alt="movie">
                                     </a>
                                 </div>
                                 <div class="movie-content bg-one">
                                     <h5 class="title m-0">
-                                        <a href="#0">venus</a>
+                                        <a href="index.php?act=ct_phim">venus</a>
                                     </h5>
                                     <ul class="movie-rating-percent">
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/tomato.png" alt="movie">
+                                                <img src="../assets/images/movie/tomato.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
                                         <li>
                                             <div class="thumb">
-                                                <img src="assets/images/movie/cake.png" alt="movie">
+                                                <img src="../assets/images/movie/cake.png" alt="movie">
                                             </div>
                                             <span class="content">88%</span>
                                         </li>
@@ -176,7 +176,7 @@
                             <div class="event-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/event/event01.jpg" alt="event">
+                                        <img src="../assets/images/event/event01.jpg" alt="event">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
@@ -197,7 +197,7 @@
                             <div class="event-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/event/event02.jpg" alt="event">
+                                        <img src="../assets/images/event/event02.jpg" alt="event">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
@@ -218,7 +218,7 @@
                             <div class="event-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/event/event03.jpg" alt="event">
+                                        <img src="../assets/images/event/event03.jpg" alt="event">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
@@ -247,7 +247,7 @@
                             <div class="sports-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/sports/sports01.jpg" alt="sports">
+                                        <img src="../assets/images/sports/sports01.jpg" alt="sports">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
@@ -268,7 +268,7 @@
                             <div class="sports-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/sports/sports02.jpg" alt="sports">
+                                        <img src="../assets/images/sports/sports02.jpg" alt="sports">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
@@ -289,7 +289,7 @@
                             <div class="sports-grid">
                                 <div class="movie-thumb c-thumb">
                                     <a href="#0">
-                                        <img src="assets/images/sports/sports03.jpg" alt="sports">
+                                        <img src="../assets/images/sports/sports03.jpg" alt="sports">
                                     </a>
                                     <div class="event-date">
                                         <h6 class="date-title">28</h6>
