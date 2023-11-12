@@ -15,7 +15,7 @@
             <div class="container">
                 <div id="header_main">
                     <div class="header_logo">
-                        <h1>FPOLY Cinema</h1>
+                        <h1>FPOLY Cinema Manager</h1>
                     </div>
     
                     <nav class="header_menu">

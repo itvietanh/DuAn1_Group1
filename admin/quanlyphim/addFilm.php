@@ -55,6 +55,7 @@
                 <div class="border-top">
                     <div class="card-body">
                         <input type="submit" class="btn btn-primary" name="btn_add" value="Thêm Phim">
+                        <a href="index.php?act=list_film"><input class="btn btn-primary" type="button" name="list_film" value="Danh Sách Phim"></a>
                     </div>
                 </div>
             </form>
