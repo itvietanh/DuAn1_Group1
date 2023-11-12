@@ -25,7 +25,7 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $rel_date = $_POST['rel_date'];
                 $genre = $_POST['genre'];
                 $showTimeFrame = $_POST['showTimeFrame'];
-                $image = $_FILES['image']['name'];
+                $image = $img_path . $_FILES['image']['name'];
                 $upFile = $img_path . basename($_FILES['image']['name']);
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $upFile)) {
                     echo "Upload successfully";
@@ -56,8 +56,8 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $showTimeFrame = $_POST['showTimeFrame'];
                 $image = $_FILES['image']['name'];
                 $upFile = $img_path . basename($_FILES['image']['name']);
-                $checkUP = "";
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $upFile)) {
+                    $image = $upFile;
 //                    echo "Upload successfully";
                 } else {
 //                    echo "Upload failed";
@@ -79,6 +79,11 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             $list_film = loadall_film();
             include "quanlyphim/listFilm.php";
             break;
+        case 'list_film':
+            $list_film = loadall_film();
+            include "quanlyphim/listFilm.php";
+            break;
+
 //      Controller Loai Phim
         case 'quanlyloaiphim':
             $list_genre = loadall_genre();
@@ -120,6 +125,7 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
         case 'list_genre':
             $list_genre = loadall_genre();
             include "quanlyloaiphim/listGenre.php";
+            break;
         default:
             include 'home.php';
             break;

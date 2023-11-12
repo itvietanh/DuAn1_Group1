@@ -1,6 +1,9 @@
 <footer>
-            <h1>Hello Con Cu</h1>
-        </footer>
+    <div class="container">
+        <img src="../img/logo.png" alt="">
+    </div>
+
+</footer>
     </div>
 </body>
 
