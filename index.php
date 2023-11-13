@@ -1,4 +1,5 @@
 <?php
+    include "global.php";
     include "view/header.php";
     if (isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
@@ -19,6 +20,8 @@
             case 'ct_phim':
                 include "view/chitietphim.php";
                 break;
+            default:
+                include "view/home.php";
         }
     } else {
         include "view/home.php";

@@ -1,5 +1,5 @@
 <!-- ==========Sign-In-Section========== -->
-<section class="account-section bg_img" data-background="assets/images/account/account-bg.jpg">
+<section class="account-section bg_img" data-background="<?php echo $path?>/images/account/account-bg.jpg">
     <div class="container">
         <div class="padding-top padding-bottom">
             <div class="account-area">

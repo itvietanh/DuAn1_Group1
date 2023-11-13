@@ -6,7 +6,7 @@
                 <div class="widget-1 widget-banner">
                     <div class="widget-1-body">
                         <a href="#0">
-                            <img src="../assets/images/sidebar/banner/banner01.jpg" alt="banner">
+                            <img src="<?php echo $path?>assets/images/sidebar/banner/banner01.jpg" alt="banner">
                         </a>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                 <div class="widget-1 widget-banner">
                     <div class="widget-1-body">
                         <a href="#0">
-                            <img src="../assets/images/sidebar/banner/banner02.jpg" alt="banner">
+                            <img src="<?php echo $path?>assets/images/sidebar/banner/banner02.jpg" alt="banner">
                         </a>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie01.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie01.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -159,13 +159,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -177,7 +177,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie02.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie02.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -187,13 +187,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -205,7 +205,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie03.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie03.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -215,13 +215,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -233,7 +233,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie04.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie04.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -243,13 +243,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -261,7 +261,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie05.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie05.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -271,13 +271,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -289,7 +289,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie06.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie06.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -299,13 +299,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -317,7 +317,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie07.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie07.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -327,13 +327,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -345,7 +345,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie08.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie08.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -355,13 +355,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -373,7 +373,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie09.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie09.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -383,13 +383,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -401,7 +401,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie10.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie10.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -411,13 +411,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -429,7 +429,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie11.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie11.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -439,13 +439,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -457,7 +457,7 @@
                                     <div class="movie-grid">
                                         <div class="movie-thumb c-thumb">
                                             <a href="movie-details.html">
-                                                <img src="../assets/images/movie/movie12.jpg" alt="movie">
+                                                <img src="<?php echo $path?>assets/images/movie/movie12.jpg" alt="movie">
                                             </a>
                                         </div>
                                         <div class="movie-content bg-one">
@@ -467,13 +467,13 @@
                                             <ul class="movie-rating-percent">
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
                                                 <li>
                                                     <div class="thumb">
-                                                        <img src="../assets/images/movie/cake.png" alt="movie">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                     </div>
                                                     <span class="content">88%</span>
                                                 </li>
@@ -487,8 +487,8 @@
                             <div class="movie-area mb-10">
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie01.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie01.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie01.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie01.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -507,13 +507,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -523,14 +523,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -538,7 +538,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -549,8 +549,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie02.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie02.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie02.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie02.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -569,13 +569,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -585,14 +585,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -600,7 +600,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -611,8 +611,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie03.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie03.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie03.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie03.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -631,13 +631,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -647,14 +647,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -662,7 +662,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -673,8 +673,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie04.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie04.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie04.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie04.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -693,13 +693,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -709,14 +709,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -724,7 +724,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -735,8 +735,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie05.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie05.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie05.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie05.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -755,13 +755,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -771,14 +771,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -786,7 +786,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -797,8 +797,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie06.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie06.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie06.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie06.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -817,13 +817,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -833,14 +833,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -848,7 +848,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -859,8 +859,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie07.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie07.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie07.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie07.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -879,13 +879,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -895,14 +895,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -910,7 +910,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -921,8 +921,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie08.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie08.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie08.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie08.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -941,13 +941,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -957,14 +957,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -972,7 +972,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -983,8 +983,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie09.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie09.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie09.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie09.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -1003,13 +1003,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -1019,14 +1019,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -1034,7 +1034,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -1045,8 +1045,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie10.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie10.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie10.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie10.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -1065,13 +1065,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -1081,14 +1081,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -1096,7 +1096,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -1107,8 +1107,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie11.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie11.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie11.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie11.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -1127,13 +1127,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -1143,14 +1143,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -1158,7 +1158,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>
@@ -1169,8 +1169,8 @@
                                 </div>
                                 <div class="movie-list">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="../assets/images/movie/movie12.jpg">
-                                            <img class="d-sm-none" src="../assets/images/movie/movie12.jpg" alt="movie">
+                                        <a href="movie-details.html" class="w-100 bg_img h-100" data-background="<?php echo $path?>assets/images/movie/movie12.jpg">
+                                            <img class="d-sm-none" src="<?php echo $path?>assets/images/movie/movie12.jpg" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -1189,13 +1189,13 @@
                                         <ul class="movie-rating-percent">
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/tomato.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
                                             <li>
                                                 <div class="thumb">
-                                                    <img src="../assets/images/movie/cake.png" alt="movie">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
                                                 </div>
                                                 <span class="content">88%</span>
                                             </li>
@@ -1205,14 +1205,14 @@
                                                 <div class="react-item">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/heart.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/heart.png" alt="icons">
                                                         </div>
                                                     </a>
                                                 </div>
                                                 <div class="react-item mr-auto">
                                                     <a href="#0">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/book.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/book.png" alt="icons">
                                                         </div>
                                                         <span>book ticket</span>
                                                     </a>
@@ -1220,7 +1220,7 @@
                                                 <div class="react-item">
                                                     <a href="#0" class="popup-video">
                                                         <div class="thumb">
-                                                            <img src="../assets/images/icons/play-button.png" alt="icons">
+                                                            <img src="<?php echo $path?>assets/images/icons/play-button.png" alt="icons">
                                                         </div>
                                                         <span>watch trailer</span>
                                                     </a>

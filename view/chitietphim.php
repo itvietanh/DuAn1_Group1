@@ -1,10 +1,10 @@
-<section class="details-banner bg_img" data-background="assets/images/banner/banner03.jpg">
+<section class="details-banner bg_img" data-background="<?php echo $path?>assets/images/banner/banner03.jpg">
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-thumb">
-                <img src="assets/images/movie/venus.jpg" alt="movie">
+                <img src="<?php echo $path?>assets/images/movie/venus.jpg" alt="movie">
                 <a href="https://www.youtube.com/embed/KGeBMAgc46E" class="video-popup">
-                    <img src="assets/images/movie/video-button.png" alt="movie">
+                    <img src="<?php echo $path?>assets/images/movie/video-button.png" alt="movie">
                 </a>
             </div>
             <div class="details-banner-content offset-lg-3">
@@ -48,7 +48,7 @@
                 <div class="item">
                     <div class="item-header">
                         <div class="thumb">
-                            <img src="assets/images/movie/tomato2.png" alt="movie">
+                            <img src="<?php echo $path?>assets/images/movie/tomato2.png" alt="movie">
                         </div>
                         <div class="counter-area">
                             <span class="counter-item odometer" data-odometer-final="88">0</span>
@@ -59,7 +59,7 @@
                 <div class="item">
                     <div class="item-header">
                         <div class="thumb">
-                            <img src="assets/images/movie/cake2.png" alt="movie">
+                            <img src="<?php echo $path?>assets/images/movie/cake2.png" alt="movie">
                         </div>
                         <div class="counter-area">
                             <span class="counter-item odometer" data-odometer-final="88">0</span>
@@ -123,7 +123,7 @@
                     <div class="offer-body">
                         <div class="offer-item">
                             <div class="thumb">
-                                <img src="assets/images/sidebar/offer01.png" alt="sidebar">
+                                <img src="<?php echo $path?>assets/images/sidebar/offer01.png" alt="sidebar">
                             </div>
                             <div class="content">
                                 <h6>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="offer-item">
                             <div class="thumb">
-                                <img src="assets/images/sidebar/offer02.png" alt="sidebar">
+                                <img src="<?php echo $path?>assets/images/sidebar/offer02.png" alt="sidebar">
                             </div>
                             <div class="content">
                                 <h6>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="offer-item">
                             <div class="thumb">
-                                <img src="assets/images/sidebar/offer03.png" alt="sidebar">
+                                <img src="<?php echo $path?>assets/images/sidebar/offer03.png" alt="sidebar">
                             </div>
                             <div class="content">
                                 <h6>
@@ -161,7 +161,7 @@
                 <div class="widget-1 widget-banner">
                     <div class="widget-1-body">
                         <a href="#0">
-                            <img src="assets/images/sidebar/banner/banner01.jpg" alt="banner">
+                            <img src="<?php echo $path?>assets/images/sidebar/banner/banner01.jpg" alt="banner">
                         </a>
                     </div>
                 </div>
@@ -171,33 +171,33 @@
                     <h3 class="title">photos</h3>
                     <div class="details-photos owl-carousel">
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details01.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details01.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details01.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details01.jpg" alt="movie">
                             </a>
                         </div>
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details02.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details02.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details02.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details02.jpg" alt="movie">
                             </a>
                         </div>
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details03.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details03.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details03.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details03.jpg" alt="movie">
                             </a>
                         </div>
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details01.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details01.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details01.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details01.jpg" alt="movie">
                             </a>
                         </div>
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details02.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details02.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details02.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details02.jpg" alt="movie">
                             </a>
                         </div>
                         <div class="thumb">
-                            <a href="assets/images/movie/movie-details03.jpg" class="img-pop">
-                                <img src="assets/images/movie/movie-details03.jpg" alt="movie">
+                            <a href="<?php echo $path?>assets/images/movie/movie-details03.jpg" class="img-pop">
+                                <img src="<?php echo $path?>assets/images/movie/movie-details03.jpg" alt="movie">
                             </a>
                         </div>
                     </div>
@@ -223,7 +223,7 @@
                                     <div class="author">
                                         <div class="thumb">
                                             <a href="#0">
-                                                <img src="assets/images/cast/cast02.jpg" alt="cast">
+                                                <img src="<?php echo $path?>assets/images/cast/cast02.jpg" alt="cast">
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
@@ -259,7 +259,7 @@
                                     <div class="author">
                                         <div class="thumb">
                                             <a href="#0">
-                                                <img src="assets/images/cast/cast04.jpg" alt="cast">
+                                                <img src="<?php echo $path?>assets/images/cast/cast04.jpg" alt="cast">
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
@@ -295,7 +295,7 @@
                                     <div class="author">
                                         <div class="thumb">
                                             <a href="#0">
-                                                <img src="assets/images/cast/cast01.jpg" alt="cast">
+                                                <img src="<?php echo $path?>assets/images/cast/cast01.jpg" alt="cast">
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
@@ -331,7 +331,7 @@
                                     <div class="author">
                                         <div class="thumb">
                                             <a href="#0">
-                                                <img src="assets/images/cast/cast03.jpg" alt="cast">
+                                                <img src="<?php echo $path?>assets/images/cast/cast03.jpg" alt="cast">
                                             </a>
                                         </div>
                                         <div class="movie-review-info">
