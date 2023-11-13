@@ -20,6 +20,8 @@
                 include "view/chitietphim.php";
                 break;
         }
+    } else {
+        include "view/home.php";
     }
     include "view/footer.php";
 ?>
