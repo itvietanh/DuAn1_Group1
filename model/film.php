@@ -1,9 +1,9 @@
 <?php
     function loadall_film() {
-        $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', genre.name as 'id_genre', film.image as 'image', show_time_frame.start_time as 'start_time', show_time_frame.end_time as 'end_time' from film 
+        $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', genre.name as 'id_genre', film.image as 'image',
+        show_time_frame.start_time as 'start_time' , show_time_frame.end_time as 'end_time' FROM `film` 
         JOIN genre on film.id_genre = genre.id
-        JOIN show_time_frame on film.id_showTimeFrame = show_time_frame.id 
-        WHERE film.rel_date >= show_time_frame.date AND film.rel_date <= show_time_frame.date;";
+        JOIN show_time_frame on film.id_showTimeFrame = show_time_frame.id";
         $list_product = pdo_query($sql);
         return $list_product;
     }
@@ -13,7 +13,7 @@
         $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', film.id_genre as 'id_genre', film.image as 'image', film.id_showTimeFrame as 'showTimeFrame' from film 
             JOIN genre on film.id_genre = genre.id
             JOIN show_time_frame on film.id_showTimeFrame = show_time_frame.id 
-            WHERE film.rel_date >= show_time_frame.date AND film.rel_date <= show_time_frame.date and film.id = $id;";
+            where film.id = $id;";
         $list_product = pdo_query_one($sql);
         return $list_product;
     }
@@ -35,5 +35,13 @@
     function delete_film($id) {
         $sql = "delete from film where film.id = $id";
         pdo_execute($sql);
+    }
+
+    function loadall_film_home() {
+        $sql = "select genre.name as 'genre', film.name as 'film' from film
+        join genre on film.id_genre = genre.id
+        group by genre.name, film.name";
+        $list_film = pdo_query($sql);
+        return $list_film;
     }
 ?>

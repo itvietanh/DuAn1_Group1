@@ -112,7 +112,7 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 update_genre($id, $name);
             }
             $list_genre = loadall_genre();
-            include "quanlyloaiphim/editGenre.php";
+            include "quanlyloaiphim/listGenre.php";
             break;
         case 'delete_genre':
             if (isset($_GET['delete_genre'])) {
