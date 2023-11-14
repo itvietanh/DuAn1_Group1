@@ -80,90 +80,41 @@
                         <a class="view-all" href="movie-grid.html">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="movie-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="index.php?act=ct_phim">
-                                        <img src="<?php echo $path?>assets/images/movie/movie01.jpg" alt="movie">
-                                    </a>
+                        <?php
+                            foreach ($list_film as $value) {
+                                extract($value); ?>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="movie-grid">
+                                        <div class="movie-thumb c-thumb">
+                                            <a href="index.php?act=ct_phim">
+                                                <img src="<?php echo $path?>assets/images/movie/movie01.jpg" alt="movie">
+                                            </a>
+                                        </div>
+                                        <div class="movie-content bg-one">
+                                            <h5 class="title m-0">
+                                                <a href="index.php?act=ct_phim">alone</a>
+                                            </h5>
+                                            <ul class="movie-rating-percent">
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
+                                                    </div>
+                                                    <span class="content">88%</span>
+                                                </li>
+                                                <li>
+                                                    <div class="thumb">
+                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
+                                                    </div>
+                                                    <span class="content">88%</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="index.php?act=ct_phim">alone</a>
-                                    </h5>
-                                    <ul class="movie-rating-percent">
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="movie-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="index.php?act=ct_phim">
-                                        <img src="<?php echo $path?>assets/images/movie/movie02.jpg" alt="movie">
-                                    </a>
-                                </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="index.php?act=ct_phim">mars</a>
-                                    </h5>
-                                    <ul class="movie-rating-percent">
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="movie-grid">
-                                <div class="movie-thumb c-thumb">
-                                    <a href="index.php?act=ct_phim">
-                                        <img src="<?php echo $path?>assets/images/movie/movie03.jpg" alt="movie">
-                                    </a>
-                                </div>
-                                <div class="movie-content bg-one">
-                                    <h5 class="title m-0">
-                                        <a href="index.php?act=ct_phim">venus</a>
-                                    </h5>
-                                    <ul class="movie-rating-percent">
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                        <li>
-                                            <div class="thumb">
-                                                <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
-                                            </div>
-                                            <span class="content">88%</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        ?>
+
                     </div>
                 </div>
                 <div class="article-section padding-bottom">

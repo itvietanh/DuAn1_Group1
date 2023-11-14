@@ -5,6 +5,7 @@
         $act = $_GET['act'];
         switch ($act) {
             case 'home':
+                $list_film = loadall_film_home();
                 include "view/banner.php";
                 include "view/home.php";
                 break;

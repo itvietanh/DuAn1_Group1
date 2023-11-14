@@ -38,7 +38,7 @@
     }
 
     function loadall_film_home() {
-        $sql = "select genre.name as 'genre', film.name as 'film' from film
+        $sql = "select genre.name as 'genre', film.name as 'film', film.image from film
         join genre on film.id_genre = genre.id
         group by genre.name, film.name";
         $list_film = pdo_query($sql);
