@@ -11,6 +11,7 @@
                 $list_film_cartoon = loadall_film_cartoon();
                 $list_film_action = loadall_film_action();
                 $list_genre = loadall_genre();
+                $lissss = hashhsafds();
                 include "view/banner.php";
                 include "view/home.php";
                 break;
