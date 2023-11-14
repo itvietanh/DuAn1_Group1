@@ -76,45 +76,42 @@
             <div class="col-lg-9">
                 <div class="article-section padding-bottom">
                     <div class="section-header-1">
-                        <h2 class="title">movies</h2>
+                        <h2 class="title"><?php echo $list_film['genre'];?></h2>
                         <a class="view-all" href="movie-grid.html">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
-                        <?php
-                            foreach ($list_film as $value) {
-                                extract($value); ?>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="movie-grid">
-                                        <div class="movie-thumb c-thumb">
-                                            <a href="index.php?act=ct_phim">
-                                                <img src="<?php echo $path?>assets/images/movie/movie01.jpg" alt="movie">
-                                            </a>
-                                        </div>
-                                        <div class="movie-content bg-one">
-                                            <h5 class="title m-0">
-                                                <a href="index.php?act=ct_phim">alone</a>
-                                            </h5>
-                                            <ul class="movie-rating-percent">
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
-                                                    </div>
-                                                    <span class="content">88%</span>
-                                                </li>
-                                                <li>
-                                                    <div class="thumb">
-                                                        <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
-                                                    </div>
-                                                    <span class="content">88%</span>
-                                                </li>
-                                            </ul>
-                                        </div>
+                    <?php foreach ($list_film as $value) {
+                        extract($value);?>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="movie-grid">
+                                    <div class="movie-thumb c-thumb">
+                                        <a href="index.php?act=ct_phim">
+                                            <img src="<?php echo $image?>" alt="movie">
+                                        </a>
+                                    </div>
+                                    <div class="movie-content bg-one">
+                                        <h5 class="title m-0">
+                                            <a href="index.php?act=ct_phim"><?php echo $film?></a>
+                                        </h5>
+                                        <ul class="movie-rating-percent">
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="<?php echo $path?>assets/images/movie/tomato.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                            <li>
+                                                <div class="thumb">
+                                                    <img src="<?php echo $path?>assets/images/movie/cake.png" alt="movie">
+                                                </div>
+                                                <span class="content">88%</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
+                            </div>
                         <?php
-                            }
-                        ?>
-
+                    }?>
                     </div>
                 </div>
                 <div class="article-section padding-bottom">

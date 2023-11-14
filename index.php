@@ -1,11 +1,13 @@
 <?php
     include "global.php";
+    include "model/pdo.php";
+    include "model/film.php";
     include "view/header.php";
     if (isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch ($act) {
             case 'home':
-                $list_film = loadall_film_home();
+                $list_film = loadall_film_cartoon();
                 include "view/banner.php";
                 include "view/home.php";
                 break;

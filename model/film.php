@@ -37,10 +37,11 @@
         pdo_execute($sql);
     }
 
-    function loadall_film_home() {
-        $sql = "select genre.name as 'genre', film.name as 'film', film.image from film
+    function loadall_film_cartoon() {
+        $sql = "select genre.name as 'genre', film.name as 'film', film.image as 'image' from film
         join genre on film.id_genre = genre.id
-        group by genre.name, film.name";
+        WHERE genre.name like 'Phim hoạt hình'
+        group by genre.name, film.name ORDER BY genre.name desc LIMIT 3;";
         $list_film = pdo_query($sql);
         return $list_film;
     }
