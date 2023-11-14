@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<?php echo $path?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/nice-select.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/jquery.animatedheadline.css">
-    <link rel="stylesheet" href="<?php echo $path?>assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 
     <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
 
