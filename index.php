@@ -35,8 +35,10 @@
                 break;
             case 'film_by_genre':
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
-
+                    $id = $_GET['id'];
+                    $list_film = loadall_filmByGenre($id);
                 }
+                $list_genre = loadall_genre();
                 include "view/film_by_genre.php";
                 break;
             default:

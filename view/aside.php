@@ -14,7 +14,7 @@
                     extract($value); ?>
                     <li>
                         <h6 class="sub-title">
-                            <a href="#0"><?php echo $name?></a>
+                            <a href="index.php?act=film_by_genre&id=<?php echo $id?>"><?php echo $name?></a>
                         </h6>
                     </li>
                 <?php

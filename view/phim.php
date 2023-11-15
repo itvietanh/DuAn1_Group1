@@ -2,30 +2,7 @@
 <section class="movie-section padding-top padding-bottom">
     <div class="container">
         <div class="row flex-wrap-reverse justify-content-center">
-            <div class="col-sm-10 col-md-8 col-lg-3">
-                <div class="widget-1 widget-check">
-                    <div class="widget-header">
-                        <h5 class="m-title">Filter By</h5> <a href="#0" class="clear-check">Clear All</a>
-                    </div>
-                </div>
-                <div class="widget-1 widget-check">
-                    <div class="widget-1-body">
-                        <h6 class="subtitle">genre</h6>
-                        <div class="check-area">
-                            <?php foreach ($list_genre as $value) {
-                                extract($value);?>
-                                <div class="form-group">
-                                    <input type="checkbox" name="genre" id="genre1"><label for="genre1"><?php echo $name?></label>
-                                </div>
-                            <?php
-                            }?>
-                        </div>
-                        <div class="add-check-area">
-                            <a href="#0">view more <i class="plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include "view/aside.php";?>
             <div class="col-lg-9 mb-50 mb-lg-0">
                 <div class="filter-tab tab">
                     <div class="filter-area">

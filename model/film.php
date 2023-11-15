@@ -55,6 +55,15 @@
         return $list_film;
     }
 
+    function loadall_filmByGenre($id) {
+        $sql = "select genre.id as 'id', film.id as 'id', genre.name as 'genre', film.name as 'film', film.image as 'image' from film
+            join genre on film.id_genre = genre.id
+            WHERE genre.id = $id
+            group by genre.name, film.name";
+        $list_film = pdo_query($sql);
+        return $list_film;
+    }
+
     function film_detail($id) {
         $sql = "select * from film where film.id = $id";
         $film = pdo_query_one($sql);
