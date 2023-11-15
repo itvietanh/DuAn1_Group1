@@ -7,7 +7,7 @@
                 <div class="article-section padding-bottom">
                     <div class="section-header-1">
                         <h2 class="title">Phim Hoạt Hình</h2>
-                        <a class="view-all" href="movie-grid.html">View All</a>
+                        <a class="view-all" href="index.php?act=film_by_genre&id=<?php echo $genre?>">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
                     <?php foreach ($list_film_cartoon as $value) {
@@ -15,13 +15,13 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="index.php?act=ct_phim">
+                                        <a href="index.php?act=ct_phim&id=<?php echo $id?>">
                                             <img src="<?php echo $image?>" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
                                         <h5 class="title m-0">
-                                            <a href="index.php?act=ct_phim"><?php echo $film?></a>
+                                            <a href="index.php?act=ct_phim&id=<?php echo $id?>"><?php echo $film?></a>
                                         </h5>
                                         <ul class="movie-rating-percent">
                                             <li>
@@ -47,7 +47,7 @@
                 <div class="article-section padding-bottom">
                     <div class="section-header-1">
                         <h2 class="title">Phim Hành Động</h2>
-                        <a class="view-all" href="movie-grid.html">View All</a>
+                        <a class="view-all" href="index.php?act=film_by_genre&id=<?php echo $genre?>">View All</a>
                     </div>
                     <div class="row mb-30-none justify-content-center">
                         <?php foreach ($list_film_action as $value) {
@@ -55,13 +55,13 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
-                                        <a href="index.php?act=ct_phim">
+                                        <a href="index.php?act=ct_phim&id=<?php echo $id?>">
                                             <img src="<?php echo $image?>" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
                                         <h5 class="title m-0">
-                                            <a href="index.php?act=ct_phim"><?php echo $film?></a>
+                                            <a href="index.php?act=ct_phim&id=<?php echo $id?>"><?php echo $film?></a>
                                         </h5>
                                         <ul class="movie-rating-percent">
                                             <li>

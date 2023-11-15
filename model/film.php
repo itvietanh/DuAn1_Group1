@@ -38,7 +38,7 @@
     }
 
     function loadall_film_cartoon() {
-        $sql = "select genre.name as 'genre', film.name as 'film', film.image as 'image' from film
+        $sql = "select film.id as 'id', genre.name as 'genre', film.name as 'film', film.image as 'image' from film
         join genre on film.id_genre = genre.id
         WHERE genre.name like 'Phim hoạt hình'
         group by genre.name, film.name ORDER BY genre.name desc LIMIT 3;";
@@ -47,11 +47,17 @@
     }
 
     function loadall_film_action() {
-        $sql = "select genre.name as 'genre', film.name as 'film', film.image as 'image' from film
+        $sql = "select film.id as 'id', genre.name as 'genre', film.name as 'film', film.image as 'image' from film
             join genre on film.id_genre = genre.id
             WHERE genre.name like 'Bom tấn'
             group by genre.name, film.name ORDER BY genre.name desc LIMIT 3;";
         $list_film = pdo_query($sql);
         return $list_film;
-}
+    }
+
+    function film_detail($id) {
+        $sql = "select * from film where film.id = $id";
+        $film = pdo_query_one($sql);
+        return $film;
+    }
 ?>

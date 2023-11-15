@@ -1,25 +1,27 @@
+<?php extract($film);
+?>
 <section class="details-banner bg_img" data-background="<?php echo $path?>assets/images/banner/banner03.jpg">
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-thumb">
-                <img src="<?php echo $path?>assets/images/movie/venus.jpg" alt="movie">
+                <img src="<?php echo $image?>" alt="movie">
                 <a href="https://www.youtube.com/embed/KGeBMAgc46E" class="video-popup">
                     <img src="<?php echo $path?>assets/images/movie/video-button.png" alt="movie">
                 </a>
             </div>
             <div class="details-banner-content offset-lg-3">
-                <h3 class="title">Venus</h3>
+                <h3 class="title"><?php echo $name?></h3>
                 <div class="tags">
                     <a href="#0">English</a>
                     <a href="#0">Hindi</a>
                     <a href="#0">Telegu</a>
-                    <a href="#0">Tamil</a>
+                    <a href="#0">Tamil</a>z
                 </div>
                 <a href="#0" class="button">horror</a>
                 <div class="social-and-duration">
                     <div class="duration-area">
                         <div class="item">
-                            <i class="fas fa-calendar-alt"></i><span>06 Dec, 2020</span>
+                            <i class="fas fa-calendar-alt"></i><span><?php echo $rel_date?></span>
                         </div>
                         <div class="item">
                             <i class="far fa-clock"></i><span>2 hrs 50 mins</span>
@@ -104,68 +106,7 @@
 <section class="movie-details-section padding-top padding-bottom">
     <div class="container">
         <div class="row justify-content-center flex-wrap-reverse mb--50">
-            <div class="col-lg-3 col-sm-10 col-md-6 mb-50">
-                <div class="widget-1 widget-tags">
-                    <ul>
-                        <li>
-                            <a href="#0">2D</a>
-                        </li>
-                        <li>
-                            <a href="#0">imax 2D</a>
-                        </li>
-                        <li>
-                            <a href="#0">4DX</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="widget-1 widget-offer">
-                    <h3 class="title">Applicable offer</h3>
-                    <div class="offer-body">
-                        <div class="offer-item">
-                            <div class="thumb">
-                                <img src="<?php echo $path?>assets/images/sidebar/offer01.png" alt="sidebar">
-                            </div>
-                            <div class="content">
-                                <h6>
-                                    <a href="#0">Amazon Pay Cashback Offer</a>
-                                </h6>
-                                <p>Win Cashback Upto Rs 300*</p>
-                            </div>
-                        </div>
-                        <div class="offer-item">
-                            <div class="thumb">
-                                <img src="<?php echo $path?>assets/images/sidebar/offer02.png" alt="sidebar">
-                            </div>
-                            <div class="content">
-                                <h6>
-                                    <a href="#0">PayPal Offer</a>
-                                </h6>
-                                <p>Transact first time with Paypal and
-                                    get 100% cashback up to Rs. 500</p>
-                            </div>
-                        </div>
-                        <div class="offer-item">
-                            <div class="thumb">
-                                <img src="<?php echo $path?>assets/images/sidebar/offer03.png" alt="sidebar">
-                            </div>
-                            <div class="content">
-                                <h6>
-                                    <a href="#0">HDFC Bank Offer</a>
-                                </h6>
-                                <p>Get 15% discount up to INR 100*
-                                    and INR 50* off on F&B T&C apply</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget-1 widget-banner">
-                    <div class="widget-1-body">
-                        <a href="#0">
-                            <img src="<?php echo $path?>assets/images/sidebar/banner/banner01.jpg" alt="banner">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php include "view/aside.php";?>
             <div class="col-lg-9 mb-50">
                 <div class="movie-details">
                     <h3 class="title">photos</h3>
