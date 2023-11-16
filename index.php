@@ -41,6 +41,21 @@
                 $list_genre = loadall_genre();
                 include "view/film_by_genre.php";
                 break;
+            case 'bookticket':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $id = $_GET['id'];
+                    $date = $_GET['date'];
+                    $list_showdate = loadall_showdate($date);
+                    $list_date = load_date($id);
+                }
+                include "view/show_date.php";
+                break;
+            case 'show_date':
+                $date = $_POST['choose_date'];
+                $id = $_POST['id_film'];
+                $list_date = load_date($id);
+                $list_showdate = loadall_showdate($date);
+                include "view/show_date.php";
             default:
                 $list_film_cartoon = loadall_film_cartoon();
                 $list_film_action = loadall_film_action();

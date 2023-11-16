@@ -49,13 +49,13 @@
                                     <div class="col-sm-6 col-lg-4">
                                         <div class="movie-grid">
                                             <div class="movie-thumb c-thumb">
-                                                <a href="movie-details.html">
+                                                <a href="index.php?act=ct_phim&id=<?php echo $id?>">
                                                     <img src="<?php echo $image?>" alt="movie">
                                                 </a>
                                             </div>
                                             <div class="movie-content bg-one">
                                                 <h5 class="title m-0">
-                                                    <a href="movie-details.html"><?php echo $film?></a>
+                                                    <a href="index.php?act=ct_phim&id=<?php echo $id?>"><?php echo $film?></a>
                                                 </h5>
                                                 <ul class="movie-rating-percent">
                                                     <li>

@@ -69,4 +69,24 @@
         $film = pdo_query_one($sql);
         return $film;
     }
+
+    function loadall_showdate($date) {
+        $sql = "SELECT film.name as 'name_film', cinema.name as 'cinema', show_film.show_date as 'show_date',
+        time(show_time_frame.start_time) as 'start_time', show_time_frame.end_time as 'end_time' from film
+        JOIN show_film on film.id = show_film.id_film
+        JOIN cinema on show_film.id_cinema = cinema.id
+        JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
+        where show_film.show_date = '$date'
+        GROUP BY show_film.show_date, show_time_frame.start_time";
+        $list_showdate = pdo_query($sql);
+        return $list_showdate;
+    }
+
+    function load_date($id) {
+        $sql = "select DISTINCT film.id as 'id', show_date as 'date' from show_film
+        join film on show_film.id_film = film.id
+        WHERE film.id = $id";
+        $list_date = pdo_query($sql);
+        return $list_date;
+    }
 ?>

@@ -96,7 +96,7 @@
                     <p><a href="#0">Rate It</a></p>
                 </div>
             </div>
-            <a href="#0" class="custom-button">book tickets</a>
+            <a href="index.php?act=bookticket&id=<?php echo $id?>&date=<?php echo $rel_date?>" class="custom-button">book tickets</a>
         </div>
     </div>
 </section>
