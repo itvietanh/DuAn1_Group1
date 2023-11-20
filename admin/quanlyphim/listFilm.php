@@ -43,7 +43,10 @@
                                             <td><?php echo $id_genre?></td>
                                             <td><?php echo "$start_time" . " - " . "$end_time"?></td>
                                             <td><img src="<?php echo $image?>"></td>
-                                            <td><a href="index.php?act=edit_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a></td>
+                                            <td>
+                                                <a href="index.php?act=edit_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a>
+                                                <a href=""><input type="button" class="btn btn-primary" style="margin: 20px 0 0 0" value="Thêm Lịch Chiếu"></a>
+                                            </td>
                                         </tr>
                                         <?php
                                     }
