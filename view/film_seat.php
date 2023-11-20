@@ -8,7 +8,7 @@
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-content style-two">
-                <h3 class="title">Venus</h3>
+                <h3 class="title" style="font-size: 24px"><?php echo $name_film?></h3>
                 <div class="tags">
                     <a href="#0">City Walk</a>
                     <a href="#0">English - 2D</a>
@@ -58,7 +58,7 @@
                                                 ?>
                                                 <li class="single-seat">
 <!--                                                    <img src="assets/images/movie/seat01.png" alt="seat">-->
-                                                    <span class="sit-num"><?php echo $value2?></span>
+                                                    <span class="sit-num"><?php echo $key . $value2?></span>
                                                 </li>
                                                 <?php
                                             }?>
@@ -77,10 +77,10 @@
                             <span>You have Choosed Seat</span>
                             <h3 class="title" id="title-seat"></h3>
                         </div>
-                        <div class="book-item">
-                            <span>total price</span>
-                            <h3 class="title">$150</h3>
-                        </div>
+<!--                        <div class="book-item">-->
+<!--                            <span>total price</span>-->
+<!--                            <h3 class="title">$150</h3>-->
+<!--                        </div>-->
 
                         <div class="book-item">
                             <button type="submit" class="custom-button">Proceed</button>
@@ -102,7 +102,7 @@
             span.tagName = "selected_seats";
             console.log(span);
             let title = target.parentElement.childNodes[1];
-            let seatNumber = title.innerHTML + span.innerHTML;
+            let seatNumber = span.innerHTML;
             toggleSeat(seatNumber, target);
         })
     }

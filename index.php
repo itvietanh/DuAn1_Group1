@@ -45,7 +45,7 @@
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     $id = $_GET['id'];
                     $date = $_GET['date'];
-                    $list_showdate = loadall_showdate($date);
+                    $list_showdate = loadall_showdate($date, $id);
                     $list_date = load_date($id);
                 }
                 include "view/show_date.php";
@@ -54,7 +54,7 @@
                 $date = $_POST['choose_date'];
                 $id = $_POST['id_film'];
                 $list_date = load_date($id);
-                $list_showdate = loadall_showdate($date);
+                $list_showdate = loadall_showdate($date, $id);
                 include "view/show_date.php";
                 break;
             case 'film_seat':
