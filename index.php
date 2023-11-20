@@ -56,6 +56,15 @@
                 $list_date = load_date($id);
                 $list_showdate = loadall_showdate($date);
                 include "view/show_date.php";
+                break;
+            case 'film_seat':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $id = $_GET['id'];
+                    $date = $_GET['date'];
+                    $list_showdate = load_DateAndTime($id, $date);
+                }
+                include "view/film_seat.php";
+                break;
             default:
                 $list_film_cartoon = loadall_film_cartoon();
                 $list_film_action = loadall_film_action();

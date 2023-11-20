@@ -71,8 +71,8 @@
     }
 
     function loadall_showdate($date) {
-        $sql = "SELECT film.name as 'name_film', cinema.name as 'cinema', show_film.show_date as 'show_date',
-        time(show_time_frame.start_time) as 'start_time', show_time_frame.end_time as 'end_time' from film
+        $sql = "SELECT DISTINCT film.name as 'name_film', cinema.name as 'cinema', show_film.show_date as 'show_date',
+        time(show_time_frame.start_time) as 'start_time', show_time_frame.end_time as 'end_time', show_time_frame.id as 'id' from film
         JOIN show_film on film.id = show_film.id_film
         JOIN cinema on show_film.id_cinema = cinema.id
         JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
@@ -89,4 +89,14 @@
         $list_date = pdo_query($sql);
         return $list_date;
     }
+
+    function load_DateAndTime($id, $date) {
+        $sql = "SELECT show_film.show_date as 'date', show_time_frame.start_time as 'time', film.id as 'id_film' from show_film 
+        JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
+        join film on show_film.id_film = film.id
+        WHERE show_film.show_date = '$date' and show_time_frame.id = $id";
+        $list_showdate = pdo_query($sql);
+        return $list_showdate;
+    }
+
 ?>

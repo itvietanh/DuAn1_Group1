@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="<?php echo $path?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $path?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/all.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/animate.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/flaticon.css">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="<?php echo $path?>assets/css/jquery.animatedheadline.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo $path?>assets/images/favicon.png" type="image/x-icon">
 
     <title>Boleto  - Online Ticket Booking Website HTML Template</title>
 
