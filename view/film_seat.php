@@ -9,10 +9,6 @@
         <div class="details-banner-wrapper">
             <div class="details-banner-content style-two">
                 <h3 class="title" style="font-size: 24px"><?php echo $name_film?></h3>
-                <div class="tags">
-                    <a href="#0">City Walk</a>
-                    <a href="#0">English - 2D</a>
-                </div>
             </div>
         </div>
     </div>
@@ -83,7 +79,8 @@
 <!--                        </div>-->
 
                         <div class="book-item">
-                            <button type="submit" class="custom-button">Proceed</button>
+                            <input type="hidden" id="select_seat">
+                            <button type="submit" name="selected_seats" class="custom-button">Proceed</button>
                         </div>
                     </div>
                 </div>
@@ -100,8 +97,7 @@
             target.style.color ="#000";
             let span = target.childNodes[3];
             span.tagName = "selected_seats";
-            console.log(span);
-            let title = target.parentElement.childNodes[1];
+            // let title = target.parentElement.childNodes[1];
             let seatNumber = span.innerHTML;
             toggleSeat(seatNumber, target);
         })
@@ -116,6 +112,9 @@
         } else {
             selectedSeats.push(seatNumber);
         }
+        let select_seat = document.getElementById("select_seat");
+        select_seat.value = selectedSeats.join(', ');
+        console.log(select_seat.value)
         updateSeatInfo(seatNumber);
     }
 
@@ -127,7 +126,6 @@
         let seats = document.querySelectorAll('.single-seat');
         seats.forEach(seat => {
             seat.classList.toggle('selected', selectedSeats.includes(seatNumber));
-            console.log(seat)
         });
     }
 </script>

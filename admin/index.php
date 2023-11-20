@@ -126,6 +126,15 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             $list_genre = loadall_genre();
             include "quanlyloaiphim/listGenre.php";
             break;
+//      Thêm khung giờ chiếu cho phim
+        case 'add_showTime':
+            if (isset($_GET['id_film']) && $_GET['id_film'] > 0) {
+                $id = $_GET['id_film'];
+                $film = load_film($id);
+                $list_showTime = showTimeFrame();
+            }
+            include "quanlyphim/addShowTimeFrame.php";
+            break;
         default:
             include 'home.php';
             break;

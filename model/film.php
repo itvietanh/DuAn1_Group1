@@ -18,6 +18,12 @@
         return $list_product;
     }
 
+    function load_film($id) {
+        $sql = "select film.name as 'name' from film where film.id = $id";
+        $film = pdo_query_one($sql);
+        return $film;
+    }
+
     function insert_film($name, $rel_date, $genre, $showTimeFrame, $image) {
         $sql = "INSERT INTO `film` (`name`, `rel_date`, `id_genre`, `id_showTimeFrame`, `image`) VALUES ('$name', '$rel_date', '$genre', '$showTimeFrame', '$image');";
         pdo_execute($sql);
