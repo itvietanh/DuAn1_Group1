@@ -2,6 +2,7 @@
 include "../model/pdo.php";
 include "../model/film.php";
 include "../model/showTimeFrame.php";
+include "../model/account.php";
 include "../model/genre.php";
 include "../global.php";
 include "header.php";
@@ -132,7 +133,6 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $id = $_GET['id_film'];
                 $film = load_film($id);
                 $list_showTime = showTimeFrame();
-
             }
             include "quanlyphim/addShowTimeFrame.php";
             break;
@@ -142,7 +142,63 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $show_date = $_POST['show_date'];
                 $showTimeFrame = $_POST['showTimeFrame'];
                 insert_showTimeFrame($show_date, $id_film, $showTimeFrame);
+                $thongbao = "Thêm thành công";
             }
+            $list_film = loadall_film();
+            include "quanlyphim/listFilm.php";
+            break;
+        case 'quanlytaikhoan':
+            $list_account = loadall_account();
+            include "quanlytaikhoan/listAccount.php";
+            break;
+
+        case 'add_account':
+            if (isset($_POST['btn_add']) && $_POST['btn_add']) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                insert_account($username, $password, $name, $email, $phone);
+                $thongbao = "Thêm thành công";
+            }
+            include "quanlytaikhoan/addAccount.php";
+            break;
+        case 'list_account':
+            $list_account = loadall_account();
+            include "quanlytaikhoan/listAccount.php";
+            break;
+        case 'edit_account':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $account = loadone_account($id);
+            }
+            include "quanlytaikhoan/editAccount.php";
+            break;
+        case "update_account":
+            if (isset($_POST['btn_update']) && $_POST['btn_update']) {
+                $id = $_POST['id'];
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $role = $_POST['role'];
+                update_account($id, $username, $password, $name, $email, $phone, $role);
+                $thongbao = "Cập nhật tài khoản thành công";
+            }
+            $list_account = loadall_account();
+            include "quanlytaikhoan/listAccount.php";
+            break;
+        case 'delete_account':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                delete_account($id);
+                $thongbao = "Xóa tài khoản thành công";
+            }
+            $list_account = loadall_account();
+            include "quanlytaikhoan/listAccount.php";
+            break;
         default:
             include 'home.php';
             break;
