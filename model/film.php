@@ -19,13 +19,18 @@
     }
 
     function load_film($id) {
-        $sql = "select film.name as 'name' from film where film.id = $id";
+        $sql = "select film.id as 'id', film.name as 'name' from film where film.id = $id";
         $film = pdo_query_one($sql);
         return $film;
     }
 
     function insert_film($name, $rel_date, $genre, $showTimeFrame, $image) {
         $sql = "INSERT INTO `film` (`name`, `rel_date`, `id_genre`, `id_showTimeFrame`, `image`) VALUES ('$name', '$rel_date', '$genre', '$showTimeFrame', '$image');";
+        pdo_execute($sql);
+    }
+
+    function insert_showTimeFrame($show_date, $id_film, $showTimeFrame) {
+        $sql = "INSERT INTO `show_film` (`show_date`, `id_film`, `id_showTimeFrame`) VALUES ('$show_date', '$id_film', '$showTimeFrame')";
         pdo_execute($sql);
     }
 
@@ -89,7 +94,7 @@
     }
 
     function load_date($id) {
-        $sql = "select DISTINCT film.id as 'id', show_date as 'date' from show_film
+        $sql = "select DISTINCT film.id as 'id', show_film.id as 'id_date', show_film.show_date as 'date' from show_film
         join film on show_film.id_film = film.id
         WHERE film.id = $id";
         $list_date = pdo_query($sql);

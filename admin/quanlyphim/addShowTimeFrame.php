@@ -1,15 +1,23 @@
 <div class="container">
     <main>
         <div class="card">
-            <form class="form-horizontal" enctype="multipart/form-data" method="post">
+            <form action="index.php?act=add_showTimeFrame" class="form-horizontal" enctype="multipart/form-data" method="post">
                 <div class="card-body">
                     <h4 class="card-title">Thêm Khung Giờ Chiếu Cho Phim</h4>
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Tên Phim</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="fname" name="name" disabled value="<?php echo $film['name']?>">
+                            <input type="text" class="form-control" id="fname" name="name_film" disabled value="<?php echo $film['name']?>">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ngày Chiếu</label>
+                        <div class="col-sm-9">
+                            <input type="date" class="form-control" id="lname" name="show_date" placeholder="Ngày Chiếu">
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <label for="email1" class="col-sm-3 text-right control-label col-form-label">Khung Giờ Chiếu</label>
                         <div class="col-sm-9">
@@ -27,7 +35,8 @@
                 </div>
                 <div class="border-top">
                     <div class="card-body">
-                        <input type="submit" class="btn btn-primary" name="btn_add" value="Thêm Phim">
+                        <input type="hidden" name="id_film" value="<?php echo $film['id']?>">
+                        <input type="submit" class="btn btn-primary" name="add_showTime" value="Thêm Lịch Chiếu">
                         <a href="index.php?act=list_film"><input class="btn btn-primary" type="button" name="list_film" value="Danh Sách Phim"></a>
                     </div>
                 </div>

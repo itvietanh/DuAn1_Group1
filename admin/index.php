@@ -127,14 +127,22 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             include "quanlyloaiphim/listGenre.php";
             break;
 //      Thêm khung giờ chiếu cho phim
-        case 'add_showTime':
+        case 'showTimeFrame':
             if (isset($_GET['id_film']) && $_GET['id_film'] > 0) {
                 $id = $_GET['id_film'];
                 $film = load_film($id);
                 $list_showTime = showTimeFrame();
+
             }
             include "quanlyphim/addShowTimeFrame.php";
             break;
+        case 'add_showTimeFrame':
+            if (isset($_POST['add_showTime']) && $_POST['add_showTime']) {
+                $id_film = $_POST['id_film'];
+                $show_date = $_POST['show_date'];
+                $showTimeFrame = $_POST['showTimeFrame'];
+                insert_showTimeFrame($show_date, $id_film, $showTimeFrame);
+            }
         default:
             include 'home.php';
             break;

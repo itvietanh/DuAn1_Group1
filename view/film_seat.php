@@ -79,8 +79,10 @@
 <!--                        </div>-->
 
                         <div class="book-item">
-                            <input type="hidden" id="select_seat">
-                            <button type="submit" name="selected_seats" class="custom-button">Proceed</button>
+                            <form action="" method="post">
+                                <input type="hidden" id="select_seat" name="selected_seats">
+                                <button type="submit" class="custom-button">Proceed</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -131,14 +133,20 @@
 </script>
 
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Lấy danh sách các ghế đã chọn
-        $selectedSeats = $_POST['selected_seats'];
-        echo "Đã đặt ghế thành công. Các ghế đã chọn: " . implode(', ', $selectedSeats);
-        die();
-    } else {
-        // Redirect hoặc xử lý lỗi nếu không phải là phương thức POST
-//        header("Location: ../index.php");
-        exit();
-    }
+include "model/order_seat.php";
+if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
+    $seat_order = $_POST['selected_seats'];
+    insert_orderSeat($seat_order);
+}
+
+//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//        // Lấy danh sách các ghế đã chọn
+//        $selectedSeats = $_POST['selected_seats'];
+//        echo "Đã đặt ghế thành công. Các ghế đã chọn: " . implode(', ', $selectedSeats);
+//        die();
+//    } else {
+//        // Redirect hoặc xử lý lỗi nếu không phải là phương thức POST
+////        header("Location: ../index.php");
+//        exit();
+//    }
 ?>
