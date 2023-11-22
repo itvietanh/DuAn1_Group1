@@ -81,7 +81,11 @@
                         <div class="book-item">
                             <form action="" method="post">
                                 <input type="hidden" id="select_seat" name="selected_seats">
-                                <button type="submit" class="custom-button">Proceed</button>
+                                <?php if (!isset($_SESSION['account'])) {
+                                    echo "<p style='color: red'>" . "Bạn phải đăng nhập để đặt vé" . "</p>";
+                                } else {
+                                    echo '<a href="index.php?act=checkout">' . '<input type="button" class="custom-button" value="Order">' .  '</a>';
+                                }?>
                             </form>
                         </div>
                     </div>
@@ -131,22 +135,12 @@
         });
     }
 </script>
-
 <?php
 include "model/order_seat.php";
 if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
     $seat_order = $_POST['selected_seats'];
-    insert_orderSeat($seat_order);
+    $id_account = $_SESSION['account']['id'];
+    $order_date = date("Y-m-d h:i:sa");
+    insert_orderSeat($seat_order, $id_account, $order_date);
 }
-
-//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//        // Lấy danh sách các ghế đã chọn
-//        $selectedSeats = $_POST['selected_seats'];
-//        echo "Đã đặt ghế thành công. Các ghế đã chọn: " . implode(', ', $selectedSeats);
-//        die();
-//    } else {
-//        // Redirect hoặc xử lý lỗi nếu không phải là phương thức POST
-////        header("Location: ../index.php");
-//        exit();
-//    }
 ?>

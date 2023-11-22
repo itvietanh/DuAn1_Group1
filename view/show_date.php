@@ -91,7 +91,7 @@ extract($time);}
                             <?php foreach ($list_showdate as $time) {
                                 ?>
                                 <div class="item">
-                                    <a href="index.php?act=film_seat&id=<?php echo $time['id']?>&date=<?php echo $time['show_date']?>"><?php echo $time['start_time']?></a>
+                                    <a href="index.php?act=film_seat&id=<?php echo $time['id']?>&date=<?php echo $time['show_date']?>&id_film=<?php echo $id?>"><?php echo $time['start_time']?></a>
                                 </div>
                                 <?php
                             }?>

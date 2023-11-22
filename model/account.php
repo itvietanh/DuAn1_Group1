@@ -26,4 +26,10 @@
         $sql = "DELETE FROM account WHERE `account`.`id` = $id";
         pdo_execute($sql);
     }
+
+    function check_account($email, $password) {
+        $sql = "select * from `account` where `email` = '$email' and `password` = '$password'";
+        $account = pdo_query_one($sql);
+        return $account;
+    }
 ?>

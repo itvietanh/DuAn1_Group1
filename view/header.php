@@ -112,16 +112,18 @@
                     <a href="contact.html">contact</a>
                 </li>
             </ul>
-            <div class="login">
-                <li class="header-button pr-0">
-                    <a href="index.php?act=login">Login</a>
-                </li>
-            </div>
-<!--            <div class="header-bar d-lg-none">-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--            </div>-->
+            <?php
+                if (!isset($_SESSION['account'])) {
+                    echo '<div class="login">
+                            <li class="header-button pr-0">
+                                <a href="index.php?act=login">Login</a>
+                            </li>
+                        </div>';
+                } else {
+                    extract($_SESSION['account']);
+                    echo "<p>" . "Xin chào, " . "<b>" . $name . "</b>" . "<br>" . "<a href='index.php?act=logout'>" . "Đăng xuất" . "</a>" . "</p>";
+                }
+            ?>
         </div>
     </div>
 </header>

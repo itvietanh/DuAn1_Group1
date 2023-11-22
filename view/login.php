@@ -7,14 +7,14 @@
                     <span class="cate">hello</span>
                     <h2 class="title">welcome back</h2>
                 </div>
-                <form class="account-form">
+                <form class="account-form" method="post">
                     <div class="form-group">
                         <label for="email2">Email<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Email" id="email2" required>
+                        <input type="email" placeholder="Enter Your Email" name="email" id="email2" required>
                     </div>
                     <div class="form-group">
                         <label for="pass3">Password<span>*</span></label>
-                        <input type="password" placeholder="Password" id="pass3" required>
+                        <input type="password" placeholder="Password" name="password" id="pass3" required>
                     </div>
                     <div class="form-group checkgroup">
                         <input type="checkbox" id="bal2" required checked>
@@ -22,7 +22,7 @@
                         <a href="#0" class="forget-pass">Forget Password</a>
                     </div>
                     <div class="form-group text-center">
-                        <input type="submit" value="log in">
+                        <input type="submit" name="btn_login" value="log in">
                     </div>
                 </form>
                 <div class="option">
@@ -51,3 +51,4 @@
     </div>
 </section>
 <!-- ==========Sign-In-Section========== -->
+<?php ob_end_flush();?>

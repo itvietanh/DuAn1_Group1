@@ -7,7 +7,15 @@
                     <span class="cate">welcome</span>
                     <h2 class="title">to Boleto </h2>
                 </div>
-                <form class="account-form">
+                <form class="account-form" method="post">
+                    <div class="form-group">
+                        <label for="email1">Username<span>*</span></label>
+                        <input type="text" placeholder="Enter Your Username" id="email1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Name<span>*</span></label>
+                        <input type="text" placeholder="Enter Your Name" id="email1" required>
+                    </div>
                     <div class="form-group">
                         <label for="email1">Email<span>*</span></label>
                         <input type="text" placeholder="Enter Your Email" id="email1" required>

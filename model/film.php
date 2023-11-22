@@ -101,11 +101,11 @@
         return $list_date;
     }
 
-    function load_DateAndTime($id, $date) {
+    function load_DateAndTime($id, $date, $id_film) {
         $sql = "SELECT show_film.show_date as 'date', show_time_frame.start_time as 'time', film.id as 'id_film', film.name as 'name_film' from show_film 
         JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
         join film on show_film.id_film = film.id
-        WHERE show_film.show_date = '$date' and show_time_frame.id = $id";
+        WHERE show_film.show_date = '$date' and show_time_frame.id = $id and film.id = $id_film";
         $list_showdate = pdo_query($sql);
         return $list_showdate;
     }
