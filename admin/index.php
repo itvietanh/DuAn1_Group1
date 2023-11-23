@@ -15,7 +15,12 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             include 'home.php';
             break;
         case 'quanlyphim':
-            $list_film = loadall_film();
+            if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $list_film = loadall_film($kyw);
             include 'quanlyphim/listFilm.php';
             break;
         case 'add_film':

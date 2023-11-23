@@ -2,6 +2,11 @@
     foreach ($list_showdate as $value) {
         extract($value);
     }
+
+    foreach ($list_orderTicket as $key => $seats) {
+        $bookedSeats = $seats['seat_order'] . ", ";
+        echo $bookedSeats;
+    }
 ?>
 
 <section class="details-banner hero-area bg_img seat-plan-banner" data-background="assets/images/banner/banner04.jpg" style="background-image: url(&quot;assets/images/banner/banner04.jpg&quot;);">
@@ -73,18 +78,21 @@
                             <span>You have Choosed Seat</span>
                             <h3 class="title" id="title-seat"></h3>
                         </div>
-<!--                        <div class="book-item">-->
-<!--                            <span>total price</span>-->
-<!--                            <h3 class="title">$150</h3>-->
-<!--                        </div>-->
 
                         <div class="book-item">
                             <form action="" method="post">
                                 <input type="hidden" id="select_seat" name="selected_seats">
-                                <?php if (!isset($_SESSION['account'])) {
-                                    echo "<p style='color: red'>" . "Bạn phải đăng nhập để đặt vé" . "</p>";
-                                } else {
-                                    echo '<a href="index.php?act=checkout">' . '<input type="button" class="custom-button" value="Order">' .  '</a>';
+                                <input type="hidden" id="mul_price" name="price">
+                                <?php if (!isset($_SESSION['account'])) { ?>
+                                    <p style='color: red'>Bạn phải đăng nhập để đặt vé !!!</p> <?php
+                                } else { ?>
+                                    <div class="book-item">
+                                        <span>total price</span>
+                                        <input type="hidden" id="hidden_price" value="<?php echo $price['price']?>">
+                                        <h3 class="title" id="price"></h3>
+                                    </div>
+                                    <a href="index.php?act=checkout"><input type="submit" class="custom-button" value="Order"></a>
+                                    <?php
                                 }?>
                             </form>
                         </div>
@@ -96,7 +104,11 @@
 
 <script>
     let seat = document.getElementsByClassName('single-seat');
-    for (let i =0; i < seat.length; i++) {
+    let hidden_price = document.getElementById('hidden_price');
+    let price = document.getElementById('price');
+    let num_seat = Array.from(document.querySelectorAll(".sit-num"));
+    console.log(num_seat.outerText)
+    for (let i = 0; i < seat.length; i++) {
         seat[i].addEventListener("click", function (event) {
             let target = event.target;
             target.style.backgroundColor ="#fff";
@@ -133,14 +145,25 @@
         seats.forEach(seat => {
             seat.classList.toggle('selected', selectedSeats.includes(seatNumber));
         });
+
+        let count_seat = selectedSeats.length;
+        let mul = Number(hidden_price.value) * Number(count_seat);
+        price.innerText = mul;
+        let mul_price = document.getElementById('mul_price');
+        mul_price.value = price.innerText;
+        console.log(mul_price)
+
     }
 </script>
 <?php
-include "model/order_seat.php";
 if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
     $seat_order = $_POST['selected_seats'];
     $id_account = $_SESSION['account']['id'];
+    $id_film = $_GET['id_film'];
+    $id_showTimeFrame = $_GET['id'];
+    $show_date = $_GET['date'];
     $order_date = date("Y-m-d h:i:sa");
-    insert_orderSeat($seat_order, $id_account, $order_date);
+    $price = $_POST['price'];
+    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price);
 }
 ?>

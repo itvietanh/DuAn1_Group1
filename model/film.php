@@ -1,9 +1,12 @@
 <?php
-    function loadall_film() {
+    function loadall_film($kyw = "") {
         $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', genre.name as 'id_genre', film.image as 'image',
         show_time_frame.start_time as 'start_time' , show_time_frame.end_time as 'end_time' FROM `film` 
         JOIN genre on film.id_genre = genre.id
         JOIN show_time_frame on film.id_showTimeFrame = show_time_frame.id";
+        if ($kyw != "") {
+            $sql .= " where film.name like '%".$kyw."%'";
+        }
         $list_product = pdo_query($sql);
         return $list_product;
     }
@@ -82,7 +85,7 @@
     }
 
     function loadall_showdate($date, $id) {
-        $sql = "SELECT DISTINCT film.name as 'name_film', cinema.name as 'cinema', show_film.show_date as 'show_date',
+        $sql = "SELECT DISTINCT film.id as 'id_film', film.name as 'name_film', cinema.name as 'cinema', show_film.show_date as 'show_date',
         time(show_time_frame.start_time) as 'start_time', show_time_frame.end_time as 'end_time', show_time_frame.id as 'id' from film
         JOIN show_film on film.id = show_film.id_film
         JOIN cinema on show_film.id_cinema = cinema.id
@@ -94,7 +97,7 @@
     }
 
     function load_date($id) {
-        $sql = "select DISTINCT film.id as 'id', show_film.id as 'id_date', show_film.show_date as 'date' from show_film
+        $sql = "select DISTINCT show_film.show_date as 'date' from show_film
         join film on show_film.id_film = film.id
         WHERE film.id = $id";
         $list_date = pdo_query($sql);

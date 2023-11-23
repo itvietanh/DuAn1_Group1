@@ -15,7 +15,14 @@
                                         </select> entries</label></div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div id="zero_config_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="zero_config"></label></div>
+                                <form action="index.php?act=quanlyphim" method="post">
+                                    <div id="zero_config_filter" class="dataTables_filter">
+                                        <label>Search:
+                                            <input type="text" name="kyw" class="form-control form-control-sm" placeholder="" aria-controls="zero_config">
+                                        </label>
+                                        <input type="submit" class="btn btn-primary" name="filer" value="Tìm kiếm">
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row">

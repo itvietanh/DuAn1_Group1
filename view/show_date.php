@@ -48,21 +48,8 @@ extract($time);}
                     }?>
                 </select>
             </div>
-<!--            <div class="form-group">-->
-<!--                <div class="thumb">-->
-<!--                    <img src="assets/images/ticket/cinema.png" alt="ticket">-->
-<!--                </div>-->
-<!--                <span class="type">cinema</span>-->
-<!--                <select class="select-bar">-->
-<!--                    --><?php //foreach ($list_showdate as $time) {
-//                        ?>
-<!--                        <option value="Awaken">--><?php //echo $time['cinema']?><!--</option>-->
-<!--                    --><?php
-//                    }?>
-<!--                </select>-->
-<!--            </div>-->
             <div class="form-group">
-                <input type="hidden" value="<?php echo $id?>" name="id_film">
+                <input type="hidden" value="<?php echo $id_film;?>" name="id_film">
                 <input type="submit" name="send" value="Xem Suất Chiếu">
             </div>
         </form>
@@ -91,7 +78,7 @@ extract($time);}
                             <?php foreach ($list_showdate as $time) {
                                 ?>
                                 <div class="item">
-                                    <a href="index.php?act=film_seat&id=<?php echo $time['id']?>&date=<?php echo $time['show_date']?>&id_film=<?php echo $id?>"><?php echo $time['start_time']?></a>
+                                    <a href="index.php?act=film_seat&id=<?php echo $time['id']?>&date=<?php echo $time['show_date']?>&id_film=<?php echo $id_film?>"><?php echo $time['start_time']?></a>
                                 </div>
                                 <?php
                             }?>
