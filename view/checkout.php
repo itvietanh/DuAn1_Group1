@@ -1,45 +1,12 @@
+<?php
+    extract($list_infoOrder);
+?>
+
 <!-- ==========Movie-Section========== -->
 <div class="movie-facility padding-bottom padding-top">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="checkout-widget d-flex flex-wrap align-items-center justify-cotent-between">
-                    <div class="title-area">
-                        <h5 class="title">Already a Boleto  Member?</h5>
-                        <p>Sign in to earn points and make booking easier!</p>
-                    </div>
-                    <a href="#0" class="sign-in-area">
-                        <i class="fas fa-user"></i><span>Sign in</span>
-                    </a>
-                </div>
-                <div class="checkout-widget checkout-contact">
-                    <h5 class="title">Share your Contact  Details </h5>
-                    <form class="checkout-contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Full Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter your Mail">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Enter your Phone Number ">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Continue" class="custom-button">
-                        </div>
-                    </form>
-                </div>
-                <div class="checkout-widget checkout-contact">
-                    <h5 class="title">Promo Code </h5>
-                    <form class="checkout-contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Please enter promo code">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Verify" class="custom-button">
-                        </div>
-                    </form>
-                </div>
                 <div class="checkout-widget checkout-card mb-0">
                     <h5 class="title">Payment Option </h5>
                     <ul class="payment-option">
@@ -101,39 +68,28 @@
             </div>
             <div class="col-lg-4">
                 <div class="booking-summery bg-one">
-                    <h4 class="title">booking summery</h4>
+                    <h4 class="title">Thông Tin Vé Đặt</h4>
                     <ul>
                         <li>
-                            <h6 class="subtitle">Venus</h6>
-                            <span class="info">English-2d</span>
+                            <h6 class="subtitle">Tên Phim</h6>
+                            <span class="info"><?php echo $name_film?></span>
                         </li>
                         <li>
-                            <h6 class="subtitle"><span>City Walk</span><span>02</span></h6>
-                            <div class="info"><span>10 SEP TUE, 11:00 PM</span> <span>Tickets</span></div>
+                            <h6 class="subtitle"><span>Lịch Chiếu</span><span>Số Vé</span></h6>
+                            <div class="info"><span><?php echo "$show_date" . ", " . "$start_time";?></span> <span><?php echo $quantity?></span></div>
                         </li>
                         <li>
-                            <h6 class="subtitle mb-0"><span>Tickets  Price</span><span>$150</span></h6>
-                        </li>
-                    </ul>
-                    <ul class="side-shape">
-                        <li>
-                            <h6 class="subtitle"><span>combos</span><span>$57</span></h6>
-                            <span class="info"><span>2 Nachos Combo</span></span>
+                            <h6 class="subtitle">Ghế Ngồi</h6>
+                            <span class="info"><?php echo $seat_order?></span>
                         </li>
                         <li>
-                            <h6 class="subtitle"><span>food & bevarage</span></h6>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <span class="info"><span>price</span><span>$207</span></span>
-                            <span class="info"><span>vat</span><span>$15</span></span>
+                            <h6 class="subtitle mb-0"><span>Giá Vé</span><span><?php echo $ticket_price['price']?></span></h6>
                         </li>
                     </ul>
                 </div>
                 <div class="proceed-area  text-center">
-                    <h6 class="subtitle"><span>Amount Payable</span><span>$222</span></h6>
-                    <a href="#0" class="custom-button back-button">proceed</a>
+                    <h6 class="subtitle"><span>Tổng Tiền</span><span><?php echo $price?></span></h6>
+                    <a href="#0" class="custom-button back-button">Thanh Toán</a>
                 </div>
             </div>
         </div>

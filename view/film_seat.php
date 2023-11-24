@@ -2,10 +2,15 @@
     foreach ($list_showdate as $value) {
         extract($value);
     }
-
-    foreach ($list_orderTicket as $key => $seats) {
-        $bookedSeats = $seats['seat_order'] . ", ";
-        echo $bookedSeats;
+    $select = [];
+//    echo "<pre>";
+//    print_r($list_orderTicket);
+//    die();
+    if (!empty($list_orderTicket)) {
+        foreach ($list_orderTicket as $key => $seats) {
+            $bookedSeats = $seats['seat_order'].", ";
+            print_r($bookedSeats);
+        }
     }
 ?>
 
@@ -83,6 +88,7 @@
                             <form action="" method="post">
                                 <input type="hidden" id="select_seat" name="selected_seats">
                                 <input type="hidden" id="mul_price" name="price">
+                                <input type="hidden" id="hidden_quantity" name="hidden_quantity">
                                 <?php if (!isset($_SESSION['account'])) { ?>
                                     <p style='color: red'>Bạn phải đăng nhập để đặt vé !!!</p> <?php
                                 } else { ?>
@@ -91,7 +97,7 @@
                                         <input type="hidden" id="hidden_price" value="<?php echo $price['price']?>">
                                         <h3 class="title" id="price"></h3>
                                     </div>
-                                    <a href="index.php?act=checkout"><input type="submit" class="custom-button" value="Order"></a>
+                                    <a href=""><input type="submit" class="custom-button" value="Order"></a>
                                     <?php
                                 }?>
                             </form>
@@ -107,7 +113,8 @@
     let hidden_price = document.getElementById('hidden_price');
     let price = document.getElementById('price');
     let num_seat = Array.from(document.querySelectorAll(".sit-num"));
-    console.log(num_seat.outerText)
+    let quantity = 0;
+    console.log(num_seat)
     for (let i = 0; i < seat.length; i++) {
         seat[i].addEventListener("click", function (event) {
             let target = event.target;
@@ -121,13 +128,37 @@
         })
     }
     let selectedSeats = [];
+    <?php if (!empty($bookedSeats)) {
+        ?>
+    let bookedSeats = <?php echo json_encode($bookedSeats); ?>;
+    console.log(bookedSeats)
+    function checkSeatStatus(seatNumber) {
+        return bookedSeats.includes(seatNumber);
+    }
+    <?php
+    }?>
+
     function toggleSeat(seatNumber, target) {
+        <?php if (!empty($bookedSeats)) {
+            ?>
+        if (checkSeatStatus(seatNumber)) {
+            target.style.backgroundColor = "red";
+            alert('Ghế đã được đặt. Vui lòng chọn ghế khác.');
+            return;
+        }
+            <?php
+    }?>
+
         let index = selectedSeats.indexOf(seatNumber);
         if (index !== -1) {
             target.style.backgroundColor ="";
             target.style.color ="#fff";
             selectedSeats.splice(index, 1);
         } else {
+            quantity++;
+            let hidden_quantity = document.getElementById('hidden_quantity');
+            hidden_quantity.value = quantity;
+            console.log(hidden_quantity)
             selectedSeats.push(seatNumber);
         }
         let select_seat = document.getElementById("select_seat");
@@ -156,14 +187,15 @@
     }
 </script>
 <?php
-if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
-    $seat_order = $_POST['selected_seats'];
-    $id_account = $_SESSION['account']['id'];
-    $id_film = $_GET['id_film'];
-    $id_showTimeFrame = $_GET['id'];
-    $show_date = $_GET['date'];
-    $order_date = date("Y-m-d h:i:sa");
-    $price = $_POST['price'];
-    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price);
-}
+//if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
+//    $seat_order = $_POST['selected_seats'];
+//    $id_account = $_SESSION['account']['id'];
+//    $id_film = $_GET['id_film'];
+//    $id_showTimeFrame = $_GET['id'];
+//    $show_date = $_GET['date'];
+//    $order_date = date("Y-m-d h:i:sa");
+//    $price = $_POST['price'];
+//    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film);
+//    header("Location: index.php?act=checkout");
+//}
 ?>

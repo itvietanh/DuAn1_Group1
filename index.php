@@ -9,7 +9,6 @@
     include "model/ticket.php";
     include "model/order_seat.php";
     include "view/header.php";
-    $list_orderTicket = loadall_orderTicket();
     if (isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch ($act) {
@@ -101,22 +100,28 @@
                     $id_film = $_GET['id_film'];
                     $id = $_GET['id'];
                     $date = $_GET['date'];
+                    $id_account = $_SESSION['account']['id'];
                     $price = loadone_ticket($id_film);
                     $list_showdate = load_DateAndTime($id, $date, $id_film);
+                    $list_orderTicket = loadall_orderTicket($date, $id, $id_film, $id_account);
+                    if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
+                        $seat_order = $_POST['selected_seats'];
+                        $id_account = $_SESSION['account']['id'];
+                        $id_film = $_GET['id_film'];
+                        $id_showTimeFrame = $_GET['id'];
+                        $show_date = $_GET['date'];
+                        $order_date = date("Y-m-d h:i:sa");
+                        $price = $_POST['price'];
+                        $quantity = $_POST['hidden_quantity'];
+                        $ticket_price = loadone_ticket($id_film);
+                        insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity);
+                        $list_infoOrder = loadall_infoOrder($seat_order, $date, $id, $id_film);
+                        include "view/checkout.php";
+                        break;
+                    }
                 }
                 include "view/film_seat.php";
                 break;
-            case 'checkout':
-                include "view/checkout.php";
-                break;
-            case 'select_seat':
-                if (isset($_POST['selected_seats']) && $_POST['selected_seats']) {
-                    $seat_order = $_POST['selected_seats'];
-                    $id_account = $_SESSION['account']['id'];
-                    $order_date = date("Y-m-d h:i:sa");
-                    insert_orderSeat($seat_order, $id_account, $order_date);
-                    header("Location: view/checkout.php");
-                }
             default:
                 $list_film_cartoon = loadall_film_cartoon();
                 $list_film_action = loadall_film_action();
