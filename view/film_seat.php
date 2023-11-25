@@ -2,9 +2,10 @@
     foreach ($list_showdate as $value) {
         extract($value);
     }
-    $select = [];
+
+$select = [];
 //    echo "<pre>";
-//    print_r($list_orderTicket);
+//    print_r($list_showdate);
 //    die();
     if (!empty($list_orderTicket)) {
         foreach ($list_orderTicket as $key => $seats) {
@@ -19,6 +20,10 @@
         <div class="details-banner-wrapper">
             <div class="details-banner-content style-two">
                 <h3 class="title" style="font-size: 24px"><?php echo $name_film?></h3>
+                <div class="tags">
+                    <a href="#0"><?=$date?></a>
+                    <a href="#0"><?=$time?></a>
+                </div>
             </div>
         </div>
     </div>
@@ -85,7 +90,7 @@
                         </div>
 
                         <div class="book-item">
-                            <form action="" method="post">
+                            <form action="index.php?act=checkout&id=<?php echo $time?>&date=<?php echo $date?>&id_film=<?php echo $id_film?>" method="post">
                                 <input type="hidden" id="select_seat" name="selected_seats">
                                 <input type="hidden" id="mul_price" name="price">
                                 <input type="hidden" id="hidden_quantity" name="hidden_quantity">
@@ -95,9 +100,14 @@
                                     <div class="book-item">
                                         <span>total price</span>
                                         <input type="hidden" id="hidden_price" value="<?php echo $price['price']?>">
+                                        <input type="hidden" name="time" value="<?php echo $time?>">
+                                        <input type="hidden" name="name_film" value="<?php echo $name_film?>">
+                                        <input type="hidden" name="show_date" value="<?php echo $date?>">
+                                        <input type="hidden" name="id_film" value="<?php echo $id_film?>">
+                                        <input type="hidden" name="id_showTime" value="<?php echo $id?>">
                                         <h3 class="title" id="price"></h3>
                                     </div>
-                                    <a href=""><input type="submit" class="custom-button" value="Order"></a>
+                                    <input type="submit" class="custom-button" name="order" value="Order">
                                     <?php
                                 }?>
                             </form>

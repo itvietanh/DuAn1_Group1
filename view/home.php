@@ -16,7 +16,7 @@
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
                                         <a href="index.php?act=ct_phim&id=<?php echo $id?>">
-                                            <img src="<?php echo $image?>" alt="movie">
+                                            <img src="<?php echo $path_image . $image?>" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">
@@ -56,7 +56,7 @@
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
                                         <a href="index.php?act=ct_phim&id=<?php echo $id?>">
-                                            <img src="<?php echo $image?>" alt="movie">
+                                            <img src="<?php echo $path_image . $image?>" alt="movie">
                                         </a>
                                     </div>
                                     <div class="movie-content bg-one">

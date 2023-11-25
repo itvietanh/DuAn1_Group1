@@ -4,7 +4,7 @@
     <div class="container">
         <div class="details-banner-wrapper">
             <div class="details-banner-thumb">
-                <img src="<?php echo $image?>" alt="movie">
+                <img src="<?php echo $path_image . $image?>" alt="movie">
                 <a href="https://www.youtube.com/embed/KGeBMAgc46E" class="video-popup">
                     <img src="<?php echo $path?>assets/images/movie/video-button.png" alt="movie">
                 </a>

@@ -1,6 +1,5 @@
 .nice-select {
     -webkit-tap-highlight-color: transparent;
-    background-color: #fff;
     border-radius: 5px;
     border: solid 1px #e8e8e8;
     box-sizing: border-box;
@@ -119,7 +118,8 @@
 }
 
 .nice-select .list {
-    background-color: #fff;
+
+    border: 1px solid #fff;
     border-radius: 5px;
     box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
     box-sizing: border-box;
@@ -163,7 +163,7 @@
 .nice-select .option:hover,
 .nice-select .option.focus,
 .nice-select .option.selected.focus {
-    background-color: #f6f6f6;
+    background-color: cadetblue;
 }
 
 .nice-select .option.selected {

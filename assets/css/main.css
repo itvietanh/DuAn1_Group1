@@ -5116,7 +5116,7 @@ input[type="submit"] {
 
 @media (min-width: 576px) {
   .checkout-widget .payment-option {
-    margin-bottom: 40px;
+    margin: 0px 0 30px;
   }
 }
 
@@ -5200,7 +5200,7 @@ input[type="submit"] {
 
 @media (min-width: 576px) {
   .checkout-widget.checkout-card .payment-card-form .form-group {
-    width: calc(50% - 15px);
+    width: calc(103% - 15px);
   }
 }
 

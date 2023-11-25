@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="<?php echo $path?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/all.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/animate.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/flaticon.css">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<?php echo $path?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/nice-select.css">
     <link rel="stylesheet" href="<?php echo $path?>assets/css/jquery.animatedheadline.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="<?php echo $path?>assets/css/main.css">
 
     <link rel="shortcut icon" href="<?php echo $path?>assets/images/favicon.png" type="image/x-icon">
 

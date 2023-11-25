@@ -1,8 +1,12 @@
 <?php
-    function insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity) {
-        $sql = "INSERT INTO `order_ticket` (`id_account`, `seat_order`, `order_date`, `id_showTimeFrame`, `id_film`,`show_date`, `price`, `quantity`)
-          VALUES ('$id_account', '$seat_order', '$order_date', '$id_showTimeFrame', '$id_film','$show_date', '$price', '$quantity');";
-//        $sql = "INSERT INTO `order_ticket` (`seat_order`) VALUES ('$seat_order');";
+    function insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment) {
+        if ($check_payment == "payment_cash") { 
+            $sql = "INSERT INTO `order_ticket` (`id_account`, `seat_order`, `order_date`, `id_showTimeFrame`, `id_film`,`show_date`, `price`, `quantity`, `status`)
+          VALUES ('$id_account', '$seat_order', '$order_date', '$id_showTimeFrame', '$id_film','$show_date', '$price', '$quantity', 'Chưa thanh toán');";
+        } else if ($check_payment == "paymentmomo_atm") {
+            $sql = "INSERT INTO `order_ticket` (`id_account`, `seat_order`, `order_date`, `id_showTimeFrame`, `id_film`,`show_date`, `price`, `quantity`, `status`)
+          VALUES ('$id_account', '$seat_order', '$order_date', '$id_showTimeFrame', '$id_film','$show_date', '$price', '$quantity', 'Đã thanh toán');";
+        }
         pdo_execute($sql);
     }
 
