@@ -24,6 +24,11 @@
 
     <title>Boleto  - Online Ticket Booking Website HTML Template</title>
 
+    <style>
+        .nice-select .list {
+            background-color: #fff !important;
+        }
+    </style>
 
 </head>
 
@@ -121,7 +126,12 @@
                         </div>';
                 } else {
                     extract($_SESSION['account']);
-                    echo "<p>" . "Xin chào, " . "<b>" . $name . "</b>" . "<br>" . "<a href='index.php?act=logout'>" . "Đăng xuất" . "</a>" . "</p>";
+                    echo "<p>" . "Xin chào, " . "<b>" . $name . "</b>" . "<br>" . 
+                    "<a href='index.php?act=logout'>" . "Đăng xuất" . "</a>" . 
+                    "</p>";
+                    if ($_SESSION['account']['role'] == 0) {
+                        echo "<a href='admin/index.php'>". "Đăng nhập Admin" . "</a>";
+                    }
                 }
             ?>
         </div>

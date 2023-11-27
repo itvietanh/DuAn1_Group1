@@ -46,6 +46,10 @@
                                     <div class="info"><span><?php echo $_SESSION['seat_order'][4] . " - " . $_SESSION['seat_order'][6];?></span> <span><?php echo $_SESSION['seat_order'][2]?></span></div>
                                 </li>
                                 <li>
+                                    <h6 class="subtitle"><span>Phòng</span><span>Rạp Chiếu</span></h6>
+                                    <div class="info"><span><?php echo $_SESSION['seat_order'][9]?></span> <span><?php echo $_SESSION['seat_order'][10]?></span></div>
+                                </li>
+                                <li>
                                     <h6 class="subtitle">Ghế Ngồi</h6>
                                     <span class="info"><?php echo $_SESSION['seat_order'][0]?></span>
                                 </li>

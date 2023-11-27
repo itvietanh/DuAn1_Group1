@@ -4,6 +4,8 @@ include "../model/film.php";
 include "../model/showTimeFrame.php";
 include "../model/account.php";
 include "../model/genre.php";
+include "../model/thongke.php";
+include "../model/ticket.php";
 include "../global.php";
 include "header.php";
 //Controller
@@ -204,6 +206,18 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             $list_account = loadall_account();
             include "quanlytaikhoan/listAccount.php";
             break;
+        case 'thongke':
+            $thongke = loadall_thongke();
+            include 'thongke/thongke.php';
+            break;    
+        case 'bieudo':
+            $thongke = loadall_thongke();
+            include 'thongke/bieudo.php';
+            break;    
+        case 'quanlyvedat':
+            $list_orderTicket = loadall_orderTicket();
+            include 'quanlyvedat/list_ticket.php';
+            break;      
         default:
             include 'home.php';
             break;
