@@ -32,6 +32,35 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Phòng Chiếu</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="room">
+                                <option value="">--- Lựa Chọn ---</option>
+                                <?php foreach ($list_room as $value) {
+                                    extract($value);
+                                    ?>
+                                    <option value="<?php echo $id?>"><?php echo $name_room?></option>
+                                    <?php
+                                }?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Rạp Chiếu</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="cinema">
+                                <option value="">--- Lựa Chọn ---</option>
+                                <?php foreach ($list_cinema as $value) {
+                                    extract($value);
+                                    ?>
+                                    <option value="<?php echo $id_cinema?>"><?php echo $name_cinema?></option>
+                                    <?php
+                                }?>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="border-top">
                     <div class="card-body">

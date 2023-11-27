@@ -34,7 +34,6 @@
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Tên Phim</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Ngày Khởi Chiếu</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Thể Loại</th>
-                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Khung Giờ Chiếu</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Banner</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Thao Tác</th>
                                     </tr>
@@ -48,10 +47,9 @@
                                             <td><?php echo $name?></td>
                                             <td><?php echo $rel_date?></td>
                                             <td><?php echo $id_genre?></td>
-                                            <td><?php echo "$start_time" . " - " . "$end_time"?></td>
                                             <td><img src="<?php echo $image?>"></td>
                                             <td>
-                                                <a href="index.php?act=edit_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a>
+                                                <a href="index.php?act=edit_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a> <br>
                                                 <a href="index.php?act=showTimeFrame&id_film=<?php echo $id?>"><input type="button" class="btn btn-primary" style="margin: 20px 0 0 0" value="Thêm Lịch Chiếu"></a>
                                             </td>
                                         </tr>

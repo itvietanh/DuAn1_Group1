@@ -6,6 +6,8 @@ include "../model/account.php";
 include "../model/genre.php";
 include "../model/thongke.php";
 include "../model/ticket.php";
+include "../model/room.php";
+include "../model/cinema.php";
 include "../global.php";
 include "header.php";
 //Controller
@@ -140,6 +142,8 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $id = $_GET['id_film'];
                 $film = load_film($id);
                 $list_showTime = showTimeFrame();
+                $list_room = load_room();
+                $list_cinema = loadall_cinema();
             }
             include "quanlyphim/addShowTimeFrame.php";
             break;
@@ -148,7 +152,9 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $id_film = $_POST['id_film'];
                 $show_date = $_POST['show_date'];
                 $showTimeFrame = $_POST['showTimeFrame'];
-                insert_showTimeFrame($show_date, $id_film, $showTimeFrame);
+                $room = $_POST['room'];
+                $cinema = $_POST['cinema'];
+                insert_showTimeFrame($show_date, $id_film, $showTimeFrame, $room, $cinema);
                 $thongbao = "Thêm thành công";
             }
             $list_film = loadall_film();
@@ -223,6 +229,14 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             break;
 
     }
+}  else {
+    if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
+        $kyw = $_POST['kyw'];
+    } else {
+        $kyw = "";
+    }
+    $list_film = loadall_film($kyw);
+    include 'quanlyphim/listFilm.php';
 }
 include "footer.php";
 

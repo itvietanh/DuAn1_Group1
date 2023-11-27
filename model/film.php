@@ -1,10 +1,11 @@
 <?php
 function loadall_film($kyw = "")
 {
-    $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', genre.name as 'id_genre', film.image as 'image' FROM `film` 
-        JOIN genre on film.id_genre = genre.id limit 12";
+    $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', genre.name as 'id_genre', film.image as 'image'
+        FROM `film` 
+        JOIN genre on film.id_genre = genre.id";
     if ($kyw != "") {
-        $sql .= " where film.name like '%" . $kyw . "%'";
+        $sql .= " where film.name like '%" . $kyw . "%' limit 12";
     }
     $list_product = pdo_query($sql);
     return $list_product;
@@ -33,9 +34,9 @@ function insert_film($name, $rel_date, $genre, $showTimeFrame, $image)
     pdo_execute($sql);
 }
 
-function insert_showTimeFrame($show_date, $id_film, $showTimeFrame)
+function insert_showTimeFrame($show_date, $id_film, $showTimeFrame, $room, $cinema)
 {
-    $sql = "INSERT INTO `show_film` (`show_date`, `id_film`, `id_showTimeFrame`) VALUES ('$show_date', '$id_film', '$showTimeFrame')";
+    $sql = "INSERT INTO `show_film` (`show_date`, `id_film`, `id_showTimeFrame`, `id_room`, `id_cinema`) VALUES ('$show_date', '$id_film', '$showTimeFrame', '$room', '$cinema')";
     pdo_execute($sql);
 }
 

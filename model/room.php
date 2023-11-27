@@ -8,4 +8,10 @@
         $list_room = pdo_query($sql);
         return $list_room;
     }
+
+    function load_room() {
+        $sql = "select room.id as 'id', room.name as 'name_room' from room where 1";
+        $list_room = pdo_query($sql);
+        return $list_room;
+    }
 ?>
