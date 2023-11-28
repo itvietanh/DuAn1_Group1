@@ -223,7 +223,47 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
         case 'quanlyvedat':
             $list_orderTicket = loadall_orderTicket();
             include 'quanlyvedat/list_ticket.php';
-            break;      
+            break;   
+            
+            case 'quanlyve':
+                $list_ticket = loadall_ticket();
+                include 'quanlyve/listVe.php'; 
+                break;
+            case 'add_ticket':
+                $list_film = loadall_film();
+                if (isset($_POST['btn_add']) && $_POST['btn_add']) {
+                    $price = $_POST['price'];
+                    $id_film = $_POST['id_film'];
+                    insert_ticket($price, $id_film);
+                }
+            //     echo "<pre>";
+            //   print_r($list_film);
+            //   die();
+                include "quanlyve/addVe.php";
+                break;
+            case 'edit_ticket':
+                $id_ticket = $_GET['id'];
+                $ticket = editTicket($id_ticket);
+                $list_film = loadall_film();
+                include "quanlyve/editVe.php";    
+                break;
+            case 'update_ticket':
+                if (isset($_POST['btn_update']) && $_POST['btn_update']) {
+                    $id_ticket = $_POST['id_ticket'];
+                    $price = $_POST['price'];
+                    $id_film = $_POST['id_film'];
+                    update_ticket($price, $id_film, $id_ticket);
+                }
+                $list_ticket = loadall_ticket();
+                include 'quanlyve/listVe.php'; 
+                break;
+            case 'delete_ticket':
+                $id_ticket = $_GET['id'];
+                delete_ticket($id_ticket);  
+                $list_ticket = loadall_ticket();
+                include 'quanlyve/listVe.php';  
+                break; 
+
         default:
             include 'home.php';
             break;

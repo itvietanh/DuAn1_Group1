@@ -23,6 +23,7 @@
                         <li><a href="index.php?act=quanlyphim">Quản lý phim</a></li>
                         <li><a href="index.php?act=quanlyloaiphim">Quản lý loại phim</a></li>
                         <li><a href="index.php?act=quanlytaikhoan">Quản lý tài khoản</a></li>
+                        <li><a href="index.php?act=quanlyve">Quản lý vé</a></li>
                         <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
                         <li><a href="index.php?act=thongke">Thống kê</a></li>
                     </nav>

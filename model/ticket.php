@@ -5,6 +5,12 @@
         return $list_ticket;
     }
 
+    function editTicket($id_ticket) {
+        $sql = "select ticket.id as 'id_ticket', ticket.price as 'price' from `ticket` where ticket.id = $id_ticket";
+        $ticket = pdo_query_one($sql);
+        return $ticket;
+    }
+
     function loadall_orderTicket($date, $id, $id_film, $id_account) {
         $sql = "SELECT distinct order_ticket.seat_order as 'seat_order', order_ticket.show_date, order_ticket.id_showTimeFrame, 
                 order_ticket.id_film FROM `order_ticket` 
@@ -28,5 +34,28 @@
         $sql = "SELECT * FORM `order_ticket`";
         $list_orderTicket = pdo_query($sql);
         return $list_orderTicket;
+    }
+    function loadall_ticket() {
+        $sql = "select ticket.id as 'id_ticket', ticket.price as 'price', film.id as 'id_film' ,film.name as 'name_film'
+        from ticket 
+        join film on ticket.id_film = film.id
+        where 1";
+        $list_ticket = pdo_query($sql);
+        return $list_ticket;
+    }
+
+    function insert_ticket($price, $id_film) {
+        $sql = "INSERT INTO `ticket` (`price`, `id_film`) VALUES ('$price','$id_film')";
+        pdo_execute($sql);
+    }
+
+    function update_ticket($price, $id_film, $id_ticket) {
+        $sql = "UPDATE `ticket` SET `price` = '$price', `id_film` = '$id_film' where ticket.id =  $id_ticket";
+        pdo_query($sql);
+    }
+
+    function delete_ticket($id_ticket) {
+        $sql = "delete from ticket where ticket.id = $id_ticket";
+        pdo_execute($sql);
     }
 ?>
