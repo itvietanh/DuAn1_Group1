@@ -33,13 +33,13 @@
 <!-- ==========Banner-Section========== -->
 <section class="book-section bg-one">
     <div class="container">
-        <form class="ticket-search-form two" action="index.php?act=show_date" method="post">
+        <form class="ticket-search-form two" action="index.php?act=show_date&id_cinema=<?=$id_cinema?>" method="post">
             <div class="form-group">
                 <div class="thumb">
                     <img src="assets/images/ticket/date.png" alt="ticket">
                 </div>
                 <span class="type">Ngày Chiếu</span>
-                <select class="select-bar" name="choose_date">
+                <select class="select-bar" name="choose_date" required>
                     <option value="">--- Lựa Chọn ---</option>
                     <?php foreach ($list_date as $value) {
                         extract($value); ?>
@@ -58,13 +58,14 @@
                     <option value="">--- Lựa Chọn ---</option>
                     <?php foreach ($list_room as $value) {
                         extract($value); ?>
-                        <option value="<?php echo $id;?>"><?php echo $name_room ?></option>
+                        <option value="<?php echo $id;?>" <?php if($id == $id_room) echo 'selected'?>><?php echo $name_room ?></option>
                     <?php
                     } ?>
                 </select>
             </div>
             <div class="form-group">
                 <input type="hidden" value="<?php echo $id_film;?>" name="id_film">
+                <input type="hidden" value="<?php if(isset($_GET['id_cinema'])) echo $_GET['id_cinema']?>" name="id_cinema">
                 <input type="submit" name="btn_show" value="Xem Suất Chiếu" id="btn_show">
             </div>
         </form>

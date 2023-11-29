@@ -116,6 +116,8 @@ if (!empty($list_orderTicket)) {
                                 <input type="hidden" name="show_date" value="<?php echo $date ?>">
                                 <input type="hidden" name="id_film" value="<?php echo $id_film ?>">
                                 <input type="hidden" name="id_showTime" value="<?php echo $id ?>">
+                                <input type="hidden" name="id_room" value="<?php echo $id_room ?>">
+                                <input type="hidden" name="id_cinema" value="<?php echo $id_cinema ?>">
                                 <input type="hidden" name="room" value="<?php echo $room ?>">
                                 <input type="hidden" name="cinema" value="<?php echo $cinema ?>">
                                 <h3 class="title" id="price"></h3>

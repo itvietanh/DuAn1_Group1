@@ -131,7 +131,9 @@
                     "</p>";
                     if ($_SESSION['account']['role'] == 0) {
                         echo "<a href='admin/index.php'>". "Đăng nhập Admin" . "</a>";
-                    }
+                    } if ($_SESSION['account']['role'] == 1) {
+                        echo "<a href='admin/index.php'>". "Đăng nhập Nhân Viên" . "</a>";
+                    } 
                 }
             ?>
         </div>

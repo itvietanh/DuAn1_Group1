@@ -40,20 +40,6 @@ if (is_array($edit_film)) {
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Khung Giờ Chiếu</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="showTimeFrame">
-                                <option value="">--- Lựa Chọn ---</option>
-                                <?php foreach ($list_showTime as $value) {
-                                    extract($value);
-                                    ?>
-                                    <option value="<?php echo $id?>" <?php if ($edit_film['showTimeFrame'] == $id) echo "selected";?>><?php echo "$start_time" . " - " . "$end_time"?></option>
-                                    <?php
-                                }?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Banner</label>
                         <div class="col-sm-9">
                             <input type="file" name="image" class="form-control" id="cono1">

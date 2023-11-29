@@ -7,7 +7,7 @@
                 <h2 class="title">Đặt vé thành công</h2>
                 <ul class="breadcrumb">
                     <li>
-                        <a href="https://mail.google.com/">
+                        <a href="https://mailtrap.io/inboxes/2500207/messages">
                             Kiểm tra thông tin vé trong email !!!
                         </a>
                     </li>

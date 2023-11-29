@@ -29,6 +29,7 @@
                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Email</th>
                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Phone</th>
                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Role</th>
+                                    <th></th>
                                     <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Thao tác</th>
                                 </tr>
                                 </thead>
@@ -44,6 +45,17 @@
                                         <td><?php echo $email?></td>
                                         <td><?php echo $phone?></td>
                                         <td><?php echo $role?></td>
+                                        <td>
+                                            <?php 
+                                            if ($role == 0) {
+                                                echo "ADMIN";
+                                            } else if ($role == 1) {
+                                                echo "NHÂN VIÊN";
+                                            } else {
+                                                echo "KHÁCH HÀNG";
+                                            }
+                                            ?> 
+                                        </td>
                                         <td>
                                             <a href="index.php?act=edit_account&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa tài khoản này không?')" href="index.php?act=delete_account&id=<?php echo $id?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a>
                                         </td>

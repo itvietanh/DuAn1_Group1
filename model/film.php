@@ -13,9 +13,10 @@ function loadall_film($kyw = "")
 
 function loadone_film($id)
 {
-    $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', film.id_genre as 'id_genre', film.image as 'image', film.id_showTimeFrame as 'showTimeFrame' from film 
+    $sql = "SELECT film.id as 'id', film.name as 'name', film.rel_date as 'rel_date', film.id_genre as 'id_genre', film.image as 'image', show_time_frame.id as 'showTimeFrame' from film 
             JOIN genre on film.id_genre = genre.id
-            JOIN show_time_frame on film.id_showTimeFrame = show_time_frame.id 
+            JOIN show_film on film.id = show_film.id_film
+            JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
             where film.id = $id;";
     $list_product = pdo_query_one($sql);
     return $list_product;
@@ -40,12 +41,12 @@ function insert_showTimeFrame($show_date, $id_film, $showTimeFrame, $room, $cine
     pdo_execute($sql);
 }
 
-function update_film($name, $rel_date, $genre, $showTimeFrame, $image, $id)
+function update_film($name, $rel_date, $genre, $image, $id)
 {
     if ($image != "") {
-        $sql = "UPDATE `film` SET `name` = '$name', `rel_date` = '$rel_date', `id_genre` = '$genre', `id_showTimeFrame` = '$showTimeFrame', `image` = '$image' WHERE `film`.`id` = $id;";
+        $sql = "UPDATE `film` SET `name` = '$name', `rel_date` = '$rel_date', `id_genre` = '$genre', `image` = '$image' WHERE `film`.`id` = $id;";
     } else {
-        $sql = "UPDATE `film` SET `name` = '$name', `rel_date` = '$rel_date', `id_genre` = '$genre', `id_showTimeFrame` = '$showTimeFrame' WHERE `film`.`id` = $id;";
+        $sql = "UPDATE `film` SET `name` = '$name', `rel_date` = '$rel_date', `id_genre` = '$genre' WHERE `film`.`id` = $id;";
     }
     pdo_execute($sql);
 }
@@ -98,7 +99,7 @@ function film_detail($id)
     return $film;
 }
 
-function loadall_showdate($date, $id, $room)
+function loadall_showdate($date, $id, $room, $cinema)
 {
     $sql = "SELECT DISTINCT film.id as 'id_film', film.name as 'name_film', cinema.name as 'cinema', cinema.id as 'id_cinema', room.name as 'room', room.id as 'id_room', show_film.show_date as 'show_date',
         time(show_time_frame.start_time) as 'start_time', show_time_frame.end_time as 'end_time', show_time_frame.id as 'id' from film
@@ -106,7 +107,7 @@ function loadall_showdate($date, $id, $room)
         JOIN cinema on show_film.id_cinema = cinema.id
         JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
         JOIN room on show_film.id_room = room.id
-        where show_film.show_date = '$date' and film.id = $id and room.id = $room
+        where show_film.show_date = '$date' and film.id = $id and room.id = $room and cinema.id = $cinema
         GROUP BY show_film.show_date, show_time_frame.start_time";
 
     $list_showdate = pdo_query($sql);
@@ -122,15 +123,26 @@ function load_date($id)
     return $list_date;
 }
 
-function load_DateAndTime($id, $date, $id_film)
+function load_DateAndTime($id, $date, $id_film, $id_room)
 {
     $sql = "SELECT show_film.show_date as 'date', show_time_frame.start_time as 'time', film.id as 'id_film', film.name as 'name_film',
-        room.name as 'room', cinema.name as 'cinema' from show_film 
+        room.name as 'room', room.id as 'id_room', cinema.name as 'cinema', cinema.id as 'id_cinema' from show_film 
         JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
         join film on show_film.id_film = film.id
         join room on show_film.id_room = room.id
         join cinema on show_film.id_cinema = cinema.id
-        WHERE show_film.show_date = '$date' and show_time_frame.id = $id and film.id = $id_film";
+        WHERE show_film.show_date = '$date' and show_time_frame.id = $id and film.id = $id_film and room.id = $id_room";
     $list_showdate = pdo_query($sql);
     return $list_showdate;
+}
+
+function loadFilm($id_film, $id_room, $id_cinema, $date) {
+    $sql = "SELECT film.id as 'id', film.name as 'name_film', show_time_frame.id as 'showTimeFrame', room.id as 'ok', cinema.id as 'id_cinema' from show_film 
+        JOIN film on show_film.id_film = film.id
+        JOIN show_time_frame on show_film.id_showTimeFrame = show_time_frame.id
+        JOIN room on show_film.id_room = room.id
+        JOIN cinema on show_film.id_cinema = cinema.id
+        where film.id = $id_film and room.id = $id_room and cinema.id = $id_cinema and show_film.show_date = '$date'";
+    $film = pdo_query($sql);
+    return $film;
 }

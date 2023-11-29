@@ -19,12 +19,26 @@
                     </div>
 
                     <nav class="header_menu">
-                        <li><a href="index.php?act=dashboard">Dashboard</a></li>
-                        <li><a href="index.php?act=quanlyphim">Quản lý phim</a></li>
-                        <li><a href="index.php?act=quanlyloaiphim">Quản lý loại phim</a></li>
-                        <li><a href="index.php?act=quanlytaikhoan">Quản lý tài khoản</a></li>
-                        <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
-                        <li><a href="index.php?act=thongke">Thống kê</a></li>
+                        <?php if ($_SESSION['account']['role'] == 0) {
+                        ?>
+                            <li><a href="index.php?act=dashboard">Dashboard</a></li>
+                            <li><a href="index.php?act=quanlyphim">Quản lý phim</a></li>
+                            <li><a href="index.php?act=quanlyloaiphim">Quản lý loại phim</a></li>
+                            <li><a href="index.php?act=quanlytaikhoan">Quản lý tài khoản</a></li>
+                            <li><a href="index.php?act=quanlyve">Quản lý vé</a></li>
+                            <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
+                            <li><a href="index.php?act=thongke">Thống kê</a></li>
+                            <li><a href="index.php?act=thongkebinhluan">Thống kê bình luận</a></li>
+                            <li><a href="http://localhost/DuAn1_Group1/index.php?act=home">Thoát trang Admin</a></li>
+                        <?php
+                        } else {
+                            ?>
+                                <li><a href="index.php?act=quanlyphim">Dashboard</a></li>
+                                <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
+                                <li><a href="http://localhost/DuAn1_Group1/index.php?act=home">Thoát trang Nhân Viên</a></li>
+                            <?php
+                        } ?>
+
                     </nav>
                 </div>
             </div>

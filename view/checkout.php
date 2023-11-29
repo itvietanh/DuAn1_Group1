@@ -47,7 +47,7 @@
                                 </li>
                                 <li>
                                     <h6 class="subtitle"><span>Phòng</span><span>Rạp Chiếu</span></h6>
-                                    <div class="info"><span><?php echo $_SESSION['seat_order'][9]?></span> <span><?php echo $_SESSION['seat_order'][10]?></span></div>
+                                    <div class="info"><span><?php echo $_SESSION['seat_order'][11]?></span> <span><?php echo $_SESSION['seat_order'][12]?></span></div>
                                 </li>
                                 <li>
                                     <h6 class="subtitle">Ghế Ngồi</h6>

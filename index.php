@@ -115,9 +115,13 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $id = $_GET['id'];
                 $date = $_GET['date'];
                 $room = $_GET['id_room'];
-                $list_showdate = loadall_showdate($date, $id, $room);
+                $cinema = $_GET['id_cinema'];
+                $list_showdate = loadall_showdate($date, $id, $room, $cinema);
                 $list_date = load_date($id);
-                $list_room = loadall_room();
+                $list_room = loadall_room($id);
+                // echo "<pre>";
+                // print_r($list_room);
+                // die();
             }
             include "view/show_date.php";
             break;
@@ -126,13 +130,11 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $date = $_POST['choose_date'];
                 $room = $_POST['choose_room'];
                 $id = $_POST['id_film'];
+                $id_cinema = $_POST['id_cinema'];
+                $list_showdate = loadall_showdate($date, $id, $room, $id_cinema);
                 $list_date = load_date($id);
-                $list_room = loadall_room();
+                $list_room = loadall_room($id);
             }
-            $list_showdate = loadall_showdate($date, $id, $room);
-            // echo "<pre>";
-            // print_r($list_showdate);
-            // die(); 
             include "view/show_date.php";
             break;
         case 'film_seat':
@@ -140,12 +142,13 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $id_film = $_GET['id_film'];
                 $id = $_GET['id'];
                 $date = $_GET['date'];
+                $id_room = $_GET['room'];
                 if (isset($_SESSION['account']) && $_SESSION['account']) {
                     $id_account = $_SESSION['account']['id'];
                 }
                 $price = loadone_ticket($id_film);
-                $list_showdate = load_DateAndTime($id, $date, $id_film);
-                $list_orderTicket = loadall_orderTicket($date, $id, $id_film, $id_account);
+                $list_showdate = load_DateAndTime($id, $date, $id_film, $id_room);
+                $list_orderTicket = loadall_orderTicket($date, $id, $id_film, $id_room);
             }
 
             if (isset($_POST['order']) && $_POST['order']) {
@@ -157,9 +160,11 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $time = $_POST['time'];
                 $id_film = $_POST['id_film'];
                 $id_showTime = $_POST['id_showTime'];
+                $id_room = $_POST['id_room'];
+                $id_cinema = $_POST['id_cinema'];
                 $room = $_POST['room'];
                 $cinema = $_POST['cinema'];
-                $temp = [$seat_order, $price['price'], $quantity, $name_film, $show_date, $price_total, $time, $id_film, $id_showTime, $room, $cinema];
+                $temp = [$seat_order, $price['price'], $quantity, $name_film, $show_date, $price_total, $time, $id_film, $id_showTime, $id_room, $id_cinema, $room, $cinema];
                 $_SESSION['seat_order'] = $temp;
                 header("Location: index.php?act=checkout");
             }
@@ -179,17 +184,23 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             $price = $_SESSION['seat_order'][5];
             $id_film = $_SESSION['seat_order'][7];
             $quantity = $_SESSION['seat_order'][2];
+
             $username = $_SESSION['account']['name'];
             $email = $_SESSION['account']['email'];
             $name_film = $_SESSION['seat_order'][3];
             $time = $_SESSION['seat_order'][6];
-            $room = $_SESSION['seat_order'][9];
-            $cinema = $_SESSION['seat_order'][10];
+            $id_room = $_SESSION['seat_order'][9];
+            $id_cinema = $_SESSION['seat_order'][10];
+            $room = $_SESSION['seat_order'][11];
+            $cinema = $_SESSION['seat_order'][12];
             if (isset($_POST['payment_choose']) && $_POST['payment_choose']) {
                 if ($_POST['payment_choose'] == "payment_cash") {
                     $check_payment = "payment_cash";
-                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $room, $cinema);
-                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date);
+                    // echo "<pre>";
+                    // print_r($_SESSION['seat_order']);
+                    // die();
+                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema);
+                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema);
                     header("Location: index.php?act=thank");
                     break;
                 }
@@ -226,14 +237,16 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $email = $_SESSION['account']['email'];
                 $name_film = $_SESSION['seat_order'][3];
                 $time = $_SESSION['seat_order'][6];
-                $room = $_SESSION['seat_order'][9];
-                $cinema = $_SESSION['seat_order'][10];
+                $id_room = $_SESSION['seat_order'][9];
+                $id_cinema = $_SESSION['seat_order'][10];
+                $room = $_SESSION['seat_order'][11];
+                $cinema = $_SESSION['seat_order'][12];
                 //Insert thông tin vé đặt
-                insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $room, $cinema);
+                insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema);
                 // insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment);
                 // Insert thông tin thanh toán
                 payment_momo($partnerCode, $orderId, $amount, $orderInfo, $orderType, $transId, $payType);
-                sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date);
+                sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema);
             }
             include "view/thank.php";
             break;

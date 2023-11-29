@@ -1,5 +1,5 @@
 <?php
-function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date)
+function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema)
 {
     // Sử dụng PHPMailer
     require 'PHPMailer/src/PHPMailer.php';
@@ -22,7 +22,7 @@ function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time
         $mail->SetFrom("vuvietanh591@gmail.com", "$username"); // địa chỉ email người gửi
         $mail->Subject = "Đặt vé xem phim thành công"; // chủ đề email 
         $mail->Body = 'Tên Khách Hàng: ' . $username . ' <br>Email: ' . $email . ' <br>Tên Phim: ' . $name_film . ' <br>Ngày khởi chiếu: ' . $show_date
-            . ' <br>Khung giờ chiếu: ' . $id_showTimeFrame . ' <br>Chỗ ngồi: ' . $seat_order . ' <br>Số lượng vé: ' . $quantity . ' <br>Tổng giá: ' . $price . ' <br>Ngày đặt: ' . $order_date; // nội dung email
+            . ' <br>Khung giờ chiếu: ' . $time . ' <br>Phòng Chiếu: ' . $room . ' <br>Rạp Chiếu: ' . $cinema . ' <br>Chỗ ngồi: ' . $seat_order . ' <br>Số lượng vé: ' . $quantity . ' <br>Tổng giá: ' . $price . ' <br>Ngày đặt: ' . $order_date; // nội dung email
         $mail->AddAddress($email); // địa chỉ email người nhận
 
         if (!$mail->Send()) {

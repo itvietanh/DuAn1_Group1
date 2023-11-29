@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../model/pdo.php";
 include "../model/film.php";
 include "../model/showTimeFrame.php";
@@ -11,10 +12,10 @@ include "../model/cinema.php";
 include "../global.php";
 include "header.php";
 //Controller
-if  (isset($_GET['act']) && $_GET['act'] != "") {
+if (isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
     switch ($act) {
-//      Controller Phim
+            //      Controller Phim
         case 'dashboard':
             include 'home.php';
             break;
@@ -45,13 +46,16 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 insert_film($name, $rel_date, $genre, $showTimeFrame, $image);
                 $thongbao = "ADD FILM SUCCESSFULLY";
             }
-                $list_film = loadall_film();
-                include "quanlyphim/addFilm.php";
-                break;
+            $list_film = loadall_film();
+            include "quanlyphim/addFilm.php";
+            break;
         case 'edit_film':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];
                 $edit_film = loadone_film($id);
+                echo "<pre>";
+                echo $edit_film;
+                die();
             }
             $list_genre = loadall_genre();
             $list_showTime = showTimeFrame();
@@ -63,16 +67,15 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
                 $name = $_POST['name'];
                 $rel_date = $_POST['rel_date'];
                 $genre = $_POST['genre'];
-                $showTimeFrame = $_POST['showTimeFrame'];
                 $image = $_FILES['image']['name'];
                 $upFile = $img_path . basename($_FILES['image']['name']);
                 if (move_uploaded_file($_FILES['image']['tmp_name'], $upFile)) {
                     $image = $upFile;
-//                    echo "Upload successfully";
+                    //                    echo "Upload successfully";
                 } else {
-//                    echo "Upload failed";
+                    //                    echo "Upload failed";
                 }
-                update_film($name, $rel_date, $genre, $showTimeFrame, $image, $id);
+                update_film($name, $rel_date, $genre, $image, $id);
                 $thongbao = "UPDATE FILM SUCCESSFULLY";
             }
             $list_genre = loadall_genre();
@@ -94,7 +97,7 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             include "quanlyphim/listFilm.php";
             break;
 
-//      Controller Loai Phim
+            //      Controller Loai Phim
         case 'quanlyloaiphim':
             $list_genre = loadall_genre();
             include "quanlyloaiphim/listGenre.php";
@@ -136,7 +139,7 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
             $list_genre = loadall_genre();
             include "quanlyloaiphim/listGenre.php";
             break;
-//      Thêm khung giờ chiếu cho phim
+            //      Thêm khung giờ chiếu cho phim
         case 'showTimeFrame':
             if (isset($_GET['id_film']) && $_GET['id_film'] > 0) {
                 $id = $_GET['id_film'];
@@ -215,21 +218,82 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
         case 'thongke':
             $thongke = loadall_thongke();
             include 'thongke/thongke.php';
-            break;    
+            break;
         case 'bieudo':
             $thongke = loadall_thongke();
             include 'thongke/bieudo.php';
-            break;    
+            break;
+        case 'thongkebinhluan':
+            $thongke = loadall_thongkebinhluan();
+            include 'thongke/thongkebinhluan.php';
+            break;
+        case 'bieudo2':
+            $thongke = loadall_thongkebinhluan();
+            include 'thongke/bieudo2.php';
+            break;
         case 'quanlyvedat':
-            $list_orderTicket = loadall_orderTicket();
+            $list_orderTicket = loadOrder();
             include 'quanlyvedat/list_ticket.php';
-            break;      
+            break;
+        case 'quanlyvedatofphim':
+            if (isset($_GET['id_film']) && $_GET['id_film'] > 0) {
+                $id = $_GET['id_film'];
+                $list_orderTicketOfFilm = loadTicketOfFilm($id);
+            }
+            include 'quanlyvedat/ticket_of_film.php';
+            break;
+        case 'confirmPayment':
+            if (isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $id_order = $_GET['id_order'];
+                updateStatusPayment($id_order);
+            }
+            $list_orderTicket = loadOrder();
+            include "quanlyvedat/list_ticket.php";
+            break;
+        case 'quanlyve':
+            $list_ticket = loadall_ticket();
+            include 'quanlyve/listVe.php';
+            break;
+        case 'add_ticket':
+            $list_film = loadall_film();
+            if (isset($_POST['btn_add']) && $_POST['btn_add']) {
+                $price = $_POST['price'];
+                $id_film = $_POST['id_film'];
+                insert_ticket($price, $id_film);
+            }
+            //     echo "<pre>";
+            //   print_r($list_film);
+            //   die();
+            include "quanlyve/addVe.php";
+            break;
+        case 'edit_ticket':
+            $id_ticket = $_GET['id'];
+            $ticket = editTicket($id_ticket);
+            $list_film = loadall_film();
+            include "quanlyve/editVe.php";
+            break;
+        case 'update_ticket':
+            if (isset($_POST['btn_update']) && $_POST['btn_update']) {
+                $id_ticket = $_POST['id_ticket'];
+                $price = $_POST['price'];
+                $id_film = $_POST['id_film'];
+                update_ticket($price, $id_film, $id_ticket);
+            }
+            $list_ticket = loadall_ticket();
+            include 'quanlyve/listVe.php';
+            break;
+        case 'delete_ticket':
+            $id_ticket = $_GET['id'];
+            delete_ticket($id_ticket);
+            $list_ticket = loadall_ticket();
+            include 'quanlyve/listVe.php';
+            break;
+
         default:
             include 'home.php';
             break;
-
     }
-}  else {
+} else {
     if (isset($_POST['kyw']) && $_POST['kyw'] != "") {
         $kyw = $_POST['kyw'];
     } else {
@@ -239,5 +303,3 @@ if  (isset($_GET['act']) && $_GET['act'] != "") {
     include 'quanlyphim/listFilm.php';
 }
 include "footer.php";
-
-?>
