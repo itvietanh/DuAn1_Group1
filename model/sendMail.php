@@ -1,5 +1,5 @@
 <?php
-function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema)
+function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode)
 {
     // Sử dụng PHPMailer
     require 'PHPMailer/src/PHPMailer.php';
@@ -12,6 +12,7 @@ function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time
         $mail->IsSMTP(); // enable SMTP
         $mail->CharSet = "UTF-8";
         $mail->IsHTML(true);
+        $mail->AddEmbeddedImage("$qrcode", 'qr_code');
         $mail->SMTPDebug = 0; // gỡ lỗi: 0 = không hiển thị, 1 = hiển thị lỗi và tin nhắn, 2 = chỉ hiển thị tin nhắn
         $mail->SMTPAuth = true; // xác thực SMTP
         $mail->SMTPSecure = 'tls'; // kết nối an toàn SMTP: tls hoặc ssl
@@ -22,7 +23,7 @@ function sendConfirmationEmail($username, $email, $seat_order, $name_film, $time
         $mail->SetFrom("vuvietanh591@gmail.com", "$username"); // địa chỉ email người gửi
         $mail->Subject = "Đặt vé xem phim thành công"; // chủ đề email 
         $mail->Body = 'Tên Khách Hàng: ' . $username . ' <br>Email: ' . $email . ' <br>Tên Phim: ' . $name_film . ' <br>Ngày khởi chiếu: ' . $show_date
-            . ' <br>Khung giờ chiếu: ' . $time . ' <br>Phòng Chiếu: ' . $room . ' <br>Rạp Chiếu: ' . $cinema . ' <br>Chỗ ngồi: ' . $seat_order . ' <br>Số lượng vé: ' . $quantity . ' <br>Tổng giá: ' . $price . ' <br>Ngày đặt: ' . $order_date; // nội dung email
+            . ' <br>Khung giờ chiếu: ' . $time . ' <br>Phòng Chiếu: ' . $room . ' <br>Rạp Chiếu: ' . $cinema . ' <br>Chỗ ngồi: ' . $seat_order . ' <br>Số lượng vé: ' . $quantity . ' <br>Tổng giá: ' . $price . ' <br>Ngày đặt: ' . $order_date . '<br>' . '<img src="cid:qr_code">'; // nội dung email
         $mail->AddAddress($email); // địa chỉ email người nhận
 
         if (!$mail->Send()) {

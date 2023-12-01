@@ -9,6 +9,7 @@ include "../model/thongke.php";
 include "../model/ticket.php";
 include "../model/room.php";
 include "../model/cinema.php";
+include "../model/order_seat.php";
 include "../global.php";
 include "header.php";
 //Controller
@@ -223,6 +224,10 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             $thongke = loadall_thongke();
             include 'thongke/bieudo.php';
             break;
+        case 'doanhthu':
+            $list_orderTicket = load_orderTicket();
+            include "thongke/doanhthu.php";
+            break;    
         case 'thongkebinhluan':
             $thongke = loadall_thongkebinhluan();
             include 'thongke/thongkebinhluan.php';

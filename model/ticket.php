@@ -5,6 +5,12 @@
         return $list_ticket;
     }
 
+    function editTicket($id_ticket) {
+        $sql = "select ticket.id as 'id_ticket', ticket.price as 'price' from `ticket` where ticket.id = $id_ticket";
+        $ticket = pdo_query_one($sql);
+        return $ticket;
+    }
+
     function loadall_orderTicket($date, $id, $id_film, $id_room) {
         $sql = "SELECT distinct order_ticket.seat_order as 'seat_order', order_ticket.show_date, order_ticket.id_showTimeFrame, 
                 order_ticket.id_film FROM `order_ticket` 
@@ -77,12 +83,6 @@
     function insert_ticket($price, $id_film) {
         $sql = "INSERT INTO `ticket` (`price`, `id_film`) VALUES ('$price','$id_film')";
         pdo_execute($sql);
-    }
-
-    function editTicket($id_ticket) {
-        $sql = "select ticket.id as 'id_ticket', ticket.price as 'price' from `ticket` where ticket.id = $id_ticket";
-        $ticket = pdo_query_one($sql);
-        return $ticket;
     }
 
     function update_ticket($price, $id_film, $id_ticket) {

@@ -32,11 +32,11 @@
                             <li><a href="http://localhost/DuAn1_Group1/index.php?act=home">Thoát trang Admin</a></li>
                         <?php
                         } else {
-                            ?>
-                                <li><a href="index.php?act=quanlyphim">Dashboard</a></li>
-                                <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
-                                <li><a href="http://localhost/DuAn1_Group1/index.php?act=home">Thoát trang Nhân Viên</a></li>
-                            <?php
+                        ?>
+                            <li><a href="index.php?act=quanlyphim">Dashboard</a></li>
+                            <li><a href="index.php?act=quanlyvedat">Quản lý vé đặt</a></li>
+                            <li><a href="http://localhost/DuAn1_Group1/index.php?act=home">Thoát trang Nhân Viên</a></li>
+                        <?php
                         } ?>
 
                     </nav>
