@@ -28,7 +28,7 @@
         join show_time_frame on order_ticket.id_showTimeFrame = show_time_frame.id
         join room on order_ticket.id_room = room.id
         join cinema on order_ticket.id_cinema = cinema.id
-        join account on order_ticket.id_account = account.id";
+        join account on order_ticket.id_account = account.id ORDER BY order_date desc";
         $list_order = pdo_query($sql);
         return $list_order;
     }

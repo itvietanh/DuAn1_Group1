@@ -26,28 +26,7 @@
                         <h3 class="title">what are you looking for</h3>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-20">
-                    <ul class="tab-menu ticket-tab-menu">
-                        <li class="active">
-                            <div class="tab-thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/ticket-tab01.png" alt="ticket">
-                            </div>
-                            <span>movie</span>
-                        </li>
-                        <li>
-                            <div class="tab-thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/ticket-tab02.png" alt="ticket">
-                            </div>
-                            <span>events</span>
-                        </li>
-                        <li>
-                            <div class="tab-thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/ticket-tab03.png" alt="ticket">
-                            </div>
-                            <span>sports</span>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
             <div class="tab-area">
                 <div class="tab-item active">
@@ -55,48 +34,6 @@
                         <div class="form-group large">
                             <input type="text" placeholder="Search for Movies">
                             <button type="submit"><i class="fas fa-search"></i></button>
-                        </div>
-                        <div class="form-group">
-                            <div class="thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/city.png" alt="ticket">
-                            </div>
-                            <span class="type">city</span>
-                            <select class="select-bar">
-                                <option value="london">London</option>
-                                <option value="dhaka">dhaka</option>
-                                <option value="rosario">rosario</option>
-                                <option value="madrid">madrid</option>
-                                <option value="koltaka">kolkata</option>
-                                <option value="rome">rome</option>
-                                <option value="khoksa">khoksa</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/date.png" alt="ticket">
-                            </div>
-                            <span class="type">date</span>
-                            <select class="select-bar">
-                                <option value="26-12-19">23/10/2020</option>
-                                <option value="26-12-19">24/10/2020</option>
-                                <option value="26-12-19">25/10/2020</option>
-                                <option value="26-12-19">26/10/2020</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="thumb">
-                                <img src="http://localhost/DuAn1_Group1/assets/images/ticket/cinema.png" alt="ticket">
-                            </div>
-                            <span class="type">cinema</span>
-                            <select class="select-bar">
-                                <option value="Awaken">Awaken</option>
-                                <option value="dhaka">dhaka</option>
-                                <option value="rosario">rosario</option>
-                                <option value="madrid">madrid</option>
-                                <option value="koltaka">kolkata</option>
-                                <option value="rome">rome</option>
-                                <option value="khoksa">khoksa</option>
-                            </select>
                         </div>
                     </form>
                 </div>

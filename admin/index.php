@@ -225,7 +225,12 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include 'thongke/bieudo.php';
             break;
         case 'doanhthu':
-            $list_orderTicket = load_orderTicket();
+            if (isset($_POST['filter']) && $_POST['filter'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $list_orderTicket = load_orderTicket($kyw);
             include "thongke/doanhthu.php";
             break;    
         case 'thongkebinhluan':

@@ -1,3 +1,7 @@
+<?php 
+    $list_genre = loadall_genre();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,12 +26,21 @@
 
     <link rel="shortcut icon" href="<?php echo $path?>assets/images/favicon.png" type="image/x-icon">
 
-    <title>Boleto  - Online Ticket Booking Website HTML Template</title>
+    <title>FPOLY Cinema - Đặt vé xem phim</title>
 
     <style>
         .nice-select .list {
             background-color: #fff !important;
         }
+
+        .ticket-search-form .form-group button {
+            right: 20px
+        }
+
+        .ticket-search-form .form-group.large {
+            width: 380px;
+        }
+
     </style>
 
 </head>
@@ -62,59 +75,30 @@
             </div>
             <ul class="menu">
                 <li>
-                    <a href="index.php?act=home" class="active">Home</a>
+                    <a href="index.php?act=home" class="active">Trang Chủ</a>
                 </li>
                 <li>
-                    <a href="index.php?act=movie">movies</a>
+                    <a href="index.php?act=movie">Phim</a>
+                    <ul class="submenu">
+                    <?php foreach ($list_genre as $value) {
+                    extract($value); ?>
+                    <li>
+                        <a href="index.php?act=film_by_genre&id=<?php echo $id?>"><?php echo $name?></a>
+                    </li>
+                <?php
+                }?>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#0">Xem Thêm</a>
                     <ul class="submenu">
                         <li>
-                            <a href="movie-grid.html">Movie Grid</a>
-                        </li>
-                        <li>
-                            <a href="movie-list.html">Movie List</a>
-                        </li>
-                        <li>
-                            <a href="movie-details.html">Movie Details</a>
-                        </li>
-                        <li>
-                            <a href="movie-details-2.html">Movie Details 2</a>
-                        </li>
-                        <li>
-                            <a href="movie-ticket-plan.html">Movie Ticket Plan</a>
-                        </li>
-                        <li>
-                            <a href="movie-seat-plan.html">Movie Seat Plan</a>
-                        </li>
-                        <li>
-                            <a href="movie-checkout.html">Movie Checkout</a>
-                        </li>
-                        <li>
-                            <a href="popcorn.html">Movie Food</a>
+                            <a href="events.html">Quản lý vé đặt</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#0">cinema</a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="events.html">Events</a>
-                        </li>
-                        <li>
-                            <a href="event-details.html">Event Details</a>
-                        </li>
-                        <li>
-                            <a href="event-speaker.html">Event Speaker</a>
-                        </li>
-                        <li>
-                            <a href="event-ticket.html">Event Ticket</a>
-                        </li>
-                        <li>
-                            <a href="event-checkout.html">Event Checkout</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">contact</a>
+                    <a href="contact.html">Liên hệ</a>
                 </li>
             </ul>
             <?php

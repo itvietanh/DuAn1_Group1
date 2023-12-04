@@ -57,7 +57,15 @@
                                             <td class="sorting_1"><?php echo $seat_order ?></td>
                                             <td><?php echo $order_date ?></td>
                                             <td><?php echo $quantity ?></td>
-                                            <td><?php echo $status ?></td>
+                                            <?php if ($status == "Chờ thanh toán") { ?>
+                                                   <td style="color: red; font-weight: 700;"><?php echo $status ?></td>
+                                                   <?php
+                                                } else {
+                                                    ?>
+                                                    <td style="color: green; font-weight: 700;"><?php echo $status ?></td>
+                                                    <?php
+                                                }
+                                                ?>
                                             <td><?php echo $price ?></td>
                                             <td>
                                                 <!-- <a href="index.php?act=edit_film&id=<?php echo $id ?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id ?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a> -->

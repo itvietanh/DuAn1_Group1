@@ -25,7 +25,12 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "view/home.php";
             break;
         case 'movie':
-            $list_film = loadall_film();
+            if (isset($_POST['btn-search']) && $_POST['btn-search'] != "") {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $list_film = loadall_film($kyw);
             $list_genre = loadall_genre();
             include "view/phim.php";
             break;
@@ -65,6 +70,15 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             header("Location: index.php");
             break;
         case 'sign_up':
+            if (isset($_POST['btn_signup']) && $_POST['btn_signup'] != "") {
+                $username = $_POST['username'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $phone = $_POST['phone'];
+                insert_account($username, $password, $name, $email, $phone);
+                $thongbao = "Đăng ký thành công!";
+            }
             include "view/signup.php";
             break;
         case 'ct_phim':
@@ -245,7 +259,7 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 //Insert thông tin vé đặt
                 $path = "./images_qrcode/";
                 $qrcode = $path.time().".png";
-                QRcode :: png("$username ". "$email ". "$name_film ". "$room " . "$cinema ". "$order_date " . "$price " . "$seat_order", $qrcode, 'H', 3, 3);
+                QRcode :: png("$username " . "$email " . "$name_film " . "$room " . "$cinema " . "$order_date " . "$price " . "$seat_order ", $qrcode, 'H', 3, 3);
                 insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema, $qrcode);
                 // insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment);
                 // Insert thông tin thanh toán

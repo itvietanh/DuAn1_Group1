@@ -8,35 +8,26 @@
                     <div class="filter-area">
                         <div class="filter-main">
                             <div class="left">
-                                <div class="item">
-                                    <span class="show">Show :</span>
-                                    <select class="select-bar">
-                                        <option value="12">12</option>
-                                        <option value="15">15</option>
-                                        <option value="18">18</option>
-                                        <option value="21">21</option>
-                                        <option value="24">24</option>
-                                        <option value="27">27</option>
-                                        <option value="30">30</option>
-                                    </select>
-                                </div>
-                                <div class="item">
-                                    <span class="show">Sort By :</span>
-                                    <select class="select-bar">
-                                        <option value="showing">now showing</option>
-                                        <option value="exclusive">exclusive</option>
-                                        <option value="trending">trending</option>
-                                        <option value="most-view">most view</option>
-                                    </select>
-                                </div>
+                                <ul class="grid-button tab-menu">
+                                      
+                                    <li>
+                                        <i class="fas fa-th"></i>
+                                    </li>
+                                    <li class="active">
+                                        <i class="fas fa-bars"></i>
+                                    </li>
+                                </ul>
+                                <!-- <div class="item">
+                                
+                                </div> -->
                             </div>
                             <ul class="grid-button tab-menu">
-                                <li>
-                                    <i class="fas fa-th"></i>
-                                </li>
-                                <li class="active">
-                                    <i class="fas fa-bars"></i>
-                                </li>
+                            <form class="ticket-search-form" action="index.php?act=movie" method="post">
+                                    <div class="form-group large">
+                                        <input type="text" name="kyw" required placeholder="Search for Movies">
+                                        <input type="submit" name="btn-search">
+                                    </div>
+                                </form>
                             </ul>
                         </div>
                     </div>

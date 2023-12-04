@@ -7,7 +7,13 @@
                 <div class="article-section padding-bottom">
                     <div class="section-header-1">
                         <h2 class="title">Phim Hoạt Hình</h2>
-                        <a class="view-all" href="index.php?act=film_by_genre&id=<?php echo $genre?>">View All</a>
+                        <!-- <a class="view-all" href="index.php?act=film_by_genre&id=<?php echo $genre?>">View All</a> -->
+                        <form class="ticket-search-form" action="index.php?act=movie" method="post">
+                        <div class="form-group large">
+                            <input type="text" name="kyw" required placeholder="Tìm kiếm phim">
+                            <input type="submit" name="btn-search">
+                        </div>
+                    </form>
                     </div>
                     <div class="row mb-30-none justify-content-center">
                     <?php foreach ($list_film_cartoon as $value) {

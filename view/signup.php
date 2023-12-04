@@ -7,33 +7,30 @@
                     <span class="cate">welcome</span>
                     <h2 class="title">to Boleto </h2>
                 </div>
-                <form class="account-form" method="post">
+                <form class="account-form" action="index.php?act=sign_up" method="post">
                     <div class="form-group">
                         <label for="email1">Username<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Username" id="email1" required>
+                        <input type="text" placeholder="Enter Your Username" name="username" required>
                     </div>
                     <div class="form-group">
                         <label for="email1">Name<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Name" id="email1" required>
+                        <input type="text" placeholder="Enter Your Name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email1">Email<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Email" id="email1" required>
+                        <input type="email" placeholder="Enter Your Email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass2">Phone<span>*</span></label>
+                        <input type="number" placeholder="Phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="pass1">Password<span>*</span></label>
-                        <input type="password" placeholder="Password" id="pass1" required>
+                        <input type="password" placeholder="Password" name="password" required>
                     </div>
-                    <div class="form-group">
-                        <label for="pass2">Confirm Password<span>*</span></label>
-                        <input type="password" placeholder="Password" id="pass2" required>
-                    </div>
-                    <div class="form-group checkgroup">
-                        <input type="checkbox" id="bal" required checked>
-                        <label for="bal">I agree to the <a href="#0">Terms, Privacy Policy</a> and <a href="#0">Fees</a></label>
-                    </div>
+      
                     <div class="form-group text-center">
-                        <input type="submit" value="Sign Up">
+                        <input type="submit" value="Sign Up" name="btn_signup">
                     </div>
                 </form>
                 <div class="option">
@@ -57,6 +54,11 @@
                         </a>
                     </li>
                 </ul>
+                <?php 
+                    if (isset($thongbao) && $thongbao != "") {
+                        echo $thongbao;
+                    }
+                ?>
             </div>
         </div>
     </div>
