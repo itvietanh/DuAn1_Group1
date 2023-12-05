@@ -8,27 +8,21 @@
                     <div class="filter-area">
                         <div class="filter-main">
                             <div class="left">
-                                <ul class="grid-button tab-menu">
-                                      
-                                    <li>
-                                        <i class="fas fa-th"></i>
-                                    </li>
-                                    <li class="active">
-                                        <i class="fas fa-bars"></i>
-                                    </li>
-                                </ul>
+
                                 <!-- <div class="item">
                                 
                                 </div> -->
                             </div>
                             <ul class="grid-button tab-menu">
-                            <form class="ticket-search-form" action="index.php?act=movie" method="post">
-                                    <div class="form-group large">
-                                        <input type="text" name="kyw" required placeholder="Search for Movies">
-                                        <input type="submit" name="btn-search">
-                                    </div>
-                                </form>
+
+                                <li>
+                                    <i class="fas fa-th"></i>
+                                </li>
+                                <li class="active">
+                                    <i class="fas fa-bars"></i>
+                                </li>
                             </ul>
+
                         </div>
                     </div>
                     <div class="tab-area">
@@ -45,7 +39,7 @@
                                             </div>
                                             <div class="movie-content bg-one">
                                                 <h5 class="title m-0">
-                                                    <a href="index.php?act=ct_phim&id=<?php echo $id ?>"><?=$name?></a>
+                                                    <a href="index.php?act=ct_phim&id=<?php echo $id ?>"><?= $name ?></a>
                                                 </h5>
                                                 <ul class="movie-rating-percent">
                                                     <li>
@@ -85,12 +79,10 @@
                                             </h5>
                                             <p class="duration">2hrs 50 min</p>
                                             <div class="movie-tags">
-                                                <a href="#0">action</a>
-                                                <a href="#0">adventure</a>
-                                                <a href="#0">fantasy</a>
+                                                <a href="#0"><?=$id_genre?></a>
                                             </div>
                                             <div class="release">
-                                                <span>Release Date : </span> <a href="#0"><?php echo $rel_date ?></a>
+                                                <span>Ngày khởi chiếu : </span> <a href="#0"><?php echo $rel_date ?></a>
                                             </div>
                                             <ul class="movie-rating-percent">
                                                 <li>
@@ -139,15 +131,6 @@
                                 } ?>
                             </div>
                         </div>
-                    </div>
-                    <div class="pagination-area text-center">
-                        <a href="#0"><i class="fas fa-angle-double-left"></i><span>Prev</span></a>
-                        <a href="#0">1</a>
-                        <a href="#0">2</a>
-                        <a href="#0" class="active">3</a>
-                        <a href="#0">4</a>
-                        <a href="#0">5</a>
-                        <a href="#0"><span>Next</span><i class="fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>

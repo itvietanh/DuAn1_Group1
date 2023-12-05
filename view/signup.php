@@ -10,23 +10,48 @@
                 <form class="account-form" action="index.php?act=sign_up" method="post">
                     <div class="form-group">
                         <label for="email1">Username<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Username" name="username" required>
+                        <input type="text" placeholder="Enter Your Username" name="username">
+                        <?php 
+                            if (isset($_SESSION['error']['username']) && $_SESSION['error']['username'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['username'] . '</p>';
+                            } 
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="email1">Name<span>*</span></label>
-                        <input type="text" placeholder="Enter Your Name" name="name" required>
+                        <input type="text" placeholder="Enter Your Name" name="name">
+                        <?php 
+                            if (isset($_SESSION['error']['name']) && $_SESSION['error']['name'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['name'] . '</p>';
+                            } 
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="email1">Email<span>*</span></label>
-                        <input type="email" placeholder="Enter Your Email" name="email" required>
+                        <input type="email" placeholder="Enter Your Email" name="email">
+                        <?php 
+                            if (isset($_SESSION['error']['email_signUp']) && $_SESSION['error']['email_signUp'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['email_signUp'] . '</p>';
+                            } 
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="pass2">Phone<span>*</span></label>
-                        <input type="number" placeholder="Phone" name="phone" required>
+                        <input type="number" placeholder="Phone" name="phone">
+                        <?php 
+                            if (isset($_SESSION['error']['phone']) && $_SESSION['error']['phone'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['phone'] . '</p>';
+                            } 
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="pass1">Password<span>*</span></label>
-                        <input type="password" placeholder="Password" name="password" required>
+                        <input type="password" placeholder="Password" name="password">
+                        <?php 
+                            if (isset($_SESSION['error']['password_signUp']) && $_SESSION['error']['password_signUp'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['password_signUp'] . '</p>';
+                            } 
+                        ?>
                     </div>
       
                     <div class="form-group text-center">

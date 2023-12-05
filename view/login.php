@@ -7,26 +7,42 @@
                     <span class="cate">hello</span>
                     <h2 class="title">welcome back</h2>
                 </div>
-                <form class="account-form" method="post">
+                <form class="account-form" action="index.php?act=login" method="post">
                     <div class="form-group">
                         <label for="email2">Email<span>*</span></label>
-                        <input type="email" placeholder="Enter Your Email" name="email" id="email2" required>
+                        <input type="email" placeholder="Nhập địa chỉ email" name="email" id="email2" value="<?php if (isset($email) && $email != "") {
+                            echo $email;
+                        } else {echo "";}?>">
+                        <?php 
+                            if (isset($_SESSION['error']['email']) && $_SESSION['error']['email'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['email'] . '</p>';
+                            } 
+                        ?>
                     </div>
                     <div class="form-group">
                         <label for="pass3">Password<span>*</span></label>
-                        <input type="password" placeholder="Password" name="password" id="pass3" required>
+                        <input type="password" placeholder="Nhập mật khẩu" name="password" id="pass3" value="<?php if (isset($password) && $password != "") {
+                            echo $password;
+                        } else {echo "";}?>">
+                        <?php 
+                            if (isset($_SESSION['error']['password']) && $_SESSION['error']['password'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['password'] . '</p>';
+                            } else if (isset($error['error_emailOrPass']) && $error['error_emailOrPass'] != "") {
+                                echo '<p class=error>' . $_SESSION['error']['error_emailOrPass'] . '</p>';
+                            }
+                        ?>
                     </div>
                     <div class="form-group checkgroup">
-                        <input type="checkbox" id="bal2" required checked>
-                        <label for="bal2">remember password</label>
-                        <a href="#0" class="forget-pass">Forget Password</a>
+                        <!-- <input type="checkbox" id="bal2" required checked>
+                        <label for="bal2">remember password</label> -->
+                        <a href="index.php?act=forgot_password" class="forget-pass">Quên mật khẩu?</a>
                     </div>
                     <div class="form-group text-center">
-                        <input type="submit" name="btn_login" value="log in">
+                        <input type="submit" name="btn_login" value="Đăng nhập">
                     </div>
                 </form>
                 <div class="option">
-                    Don't have an account? <a href="index.php?act=sign_up">sign up now</a>
+                    Bạn chưa có tài khoản? <a href="index.php?act=sign_up">đăng ký ngay</a>
                 </div>
                 <div class="or"><span>Or</span></div>
                 <ul class="social-icons">

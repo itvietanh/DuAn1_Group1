@@ -1,3 +1,21 @@
+
+<?php
+function getDayInMonth()
+{
+    $arrDay = [];
+    $month = date("m");
+    $year = date("Y");
+    for ($day = 1; $day <= 31; $day++) {
+        $time = mktime("12", "0", "0", $month, $day, $year);
+        if (date("m", $time) == $month) {
+            $arrDay[] = date("Y-m-d", $time);
+        }
+    }
+    return $arrDay;
+}
+$listDay = getDayInMonth();
+?>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript"></script>
 <script>
@@ -38,6 +56,13 @@
                     <label>Search:
                         <input style="border: 1px solid #777;" type="text" name="kyw" class="form-control form-control-sm" placeholder="Năm - Tháng - Ngày" aria-controls="zero_config">
                     </label>
+                    <!-- <select name="" id="">
+                        <?php foreach ($listDay as $value) { ?>
+                           <option value=""><?=$value?></option>
+                           <?php
+                        }?>
+                        
+                    </select> -->
                     <input type="submit" class="btn btn-primary" name="filter" value="Tìm kiếm">
                 </div>
             </form>
@@ -45,23 +70,3 @@
         <div id="piechart" style="width: 900px; height: 500px;"></div>
     </div>
 </body>
-
-<?php
-function getDayInMonth()
-{
-    $arrDay = [];
-    $month = date("m");
-    $year = date("Y");
-    for ($day = 1; $day <= 31; $day++) {
-        $time = mktime("12", "0", "0", $month, $day, $year);
-        if (date("m", $time) == $month) {
-            $arrDay[] = date("Y-m-d", $time);
-        }
-    }
-    return $arrDay;
-}
-$listDay = getDayInMonth();
-// Không dùng đến hàm getDayInMonth
-
-
-?>

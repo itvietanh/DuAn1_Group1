@@ -3,20 +3,20 @@
     <div class="banner-bg bg_img bg-fixed" data-background="http://localhost/DuAn1_Group1/assets/images/banner/banner01.jpg"></div>
     <div class="container">
         <div class="banner-content">
-            <h1 class="title  cd-headline clip"><span class="d-block">book your</span> tickets for
+            <h1 class="title  cd-headline clip"><span class="d-block">Đặt vé</span> 
                 <span class="color-theme cd-words-wrapper p-0 m-0">
-                        <b class="is-visible">Movie</b>
-                        <b>Event</b>
-                        <b>Sport</b>
+                        <b class="is-visible">Xem phim</b>
+                        <b>FPOLY Cinema</b>
+                        <!-- <b>Sport</b> -->
                     </span>
             </h1>
-            <p>Safe, secure, reliable ticketing.Your ticket to live entertainment!</p>
+            <!-- <p>Safe, secure, reliable ticketing.Your ticket to live entertainment!</p> -->
         </div>
     </div>
 </section>
 <!-- ==========Banner-Section========== -->
 <!-- ==========Ticket-Search========== -->
-<section class="search-ticket-section padding-top pt-lg-0">
+<!-- <section class="search-ticket-section padding-top pt-lg-0">
     <div class="container">
         <div class="search-tab bg_img" data-background="http://localhost/DuAn1_Group1/assets/images/ticket/ticket-bg01.jpg">
             <div class="row align-items-center mb--20">
@@ -140,5 +140,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- ==========Ticket-Search========== -->

@@ -79,7 +79,8 @@ function loadall_film_action()
 
 function loadall_filmByGenre($id)
 {
-    $sql = "select genre.id as 'id', film.id as 'id', genre.name as 'genre', film.name as 'film', film.image as 'image' from film
+    $sql = "select genre.id as 'id', film.id as 'id', genre.name as 'genre', film.name as 'film', film.image as 'image',
+            film.rel_date as 'rel_date' from film
             join genre on film.id_genre = genre.id
             WHERE genre.id = $id
             group by genre.name, film.name";

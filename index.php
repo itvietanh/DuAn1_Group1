@@ -37,8 +37,10 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
         case 'login':
             if (isset($_POST['btn_login']) && $_POST['btn_login']) {
                 $error = [];
-                if (empty($_POST['email'])) {
+                if (empty($_POST['email']) ) {
                     $error['email'] = "Bạn phải nhập email";
+                } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                    $error['email'] = "Bạn nhập email chưa đúng định dạng";
                 } else {
                     $email = $_POST['email'];
                 }
@@ -50,16 +52,19 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 }
 
                 if (!empty($error)) {
-                    echo "Lỗi !!!";
-                    echo "<p class='error'>" . $error['email'] . "</p>";
-                    echo "<p class='error'>" . $error['password'] . "</p>";
+                    $_SESSION['error'] = $error;
                 } else {
                     $check_account = check_account($email, $password);
+                    // echo "<pre>";
+                    // print_r($check_account);
+                    // die();
                     if (is_array($check_account)) {
                         $_SESSION['account'] = $check_account;
+                        unset($_SESSION['error']);
                         header("Location: index.php");
                     } else {
-                        $thongbao = "Tài khoản không tồn tại, vui lòng kiểm tra lại !!!";
+                        $error['error_emailOrPass'] = "Tài khoản hoặc mật khẩu không tổn tại, vui lòng nhập lại!";
+                        $_SESSION['error'] = $error;
                     }
                 }
             }
@@ -71,16 +76,129 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             break;
         case 'sign_up':
             if (isset($_POST['btn_signup']) && $_POST['btn_signup'] != "") {
-                $username = $_POST['username'];
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                $phone = $_POST['phone'];
-                insert_account($username, $password, $name, $email, $phone);
-                $thongbao = "Đăng ký thành công!";
+                $error = [];
+                if (empty($_POST['username']) && $_POST['username'] != "") {
+                    $error['username'] = "Bạn phải nhập username";
+                } else if (!preg_match("/^[a-zA-Z-' ]*$/",$_POST['username'])) {
+                    $error['username'] = "Username không được chưa kí tự";
+                } else {
+                    $username = $_POST['username'];
+                }
+                
+                if (empty($_POST['name']) && $_POST['name'] != "") {
+                    $error['name'] = "Bạn phải nhập name";
+                } else if (!preg_match("/^[a-zA-Z-' ]*$/",$_POST['name'])) {
+                    $error['name'] = "name không được chưa kí tự";
+                } else {
+                    $name = $_POST['name'];
+                }
+
+                if (empty($_POST['email']) ) {
+                    $error['email_signUp'] = "Bạn phải nhập email";
+                } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                    $error['email_signUp'] = "Bạn nhập email chưa đúng định dạng";
+                } else {
+                    $email = $_POST['email'];
+                }
+
+                if (empty($_POST['password'])) {
+                    $error['password_signUp'] = "Bạn phải nhập password";
+                } else {
+                    $password = $_POST['password'];
+                }
+
+                if (empty($_POST['phone'])) {
+                    $error['phone'] = "Bạn phải nhập số điện thoại";
+                } else if (is_numeric($_POST['phone'] == false) && $_POST['phone'] == "") {
+                    $error['phone'] = "Bạn phải nhập số điện thoại là số!";
+                }
+                else {
+                    $phone = $_POST['phone'];
+                }
+
+                if (!empty($error)) {
+                    $_SESSION['error'] = $error;
+                } else {
+                    unset($_SESSION['error']);
+                    insert_account($username, $password, $name, $email, $phone);
+                }
             }
             include "view/signup.php";
             break;
+        case 'forgot_password':
+            if (isset($_POST['btn_forgot'])) {
+                $error = [];
+                if (empty($_POST['email']) ) {
+                    $error['email_forGot'] = "Bạn phải nhập email";
+                } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                    $error['email_forGot'] = "Bạn nhập email chưa đúng định dạng";
+                } else {
+                    $email = $_POST['email']; 
+                }
+
+                if (!empty($error)) {
+                    $_SESSION['error'] = $error;
+                } else {
+                    unset($_SESSION['error']);
+                    $account = checkEmail($email);
+                    if ($account != false) {
+                        $rand = rand(0, 999999);
+                        $email = $account['email'];
+                        $infoCode = [$rand, $email];
+                        $_SESSION['code_forgot'] = $infoCode;
+                        sendConfirmationAccount($rand, $email);
+                        header("Location: index.php?act=confirm_code");
+                    }
+                }
+            }
+            include "view/forgot_password.php";
+            break;    
+        case 'confirm_code':
+            // echo "<pre>";
+            // printf($_SESSION['code_forgot']);
+            // die();
+            if (isset($_POST['btn_confirm'])) {
+                $error = [];
+                if (empty($_POST['code'])) {
+                    $error['code'] = "Không được để trống";
+                } else if (is_numeric($_POST['code'] == false) && $_POST['code'] == "") {
+                    $error['code'] = "Bạn phải nhập số code là số!";
+                } else if ($_POST['code'] != $_SESSION['code_forgot'][0]) {
+                    $error['code'] = "Mã xác nhận không trùng khớp";
+                } else {
+                    $code = $_POST['code'];
+                }
+
+                if (!empty($error)) {
+                    $_SESSION['error'] = $error;
+                } else {
+                    unset($_SESSION['error']);
+                    header("Location: index.php?act=change_password");
+                }
+            }
+            include "view/confim_code.php";
+            break;
+        case 'change_password':
+            if (isset($_POST['btn_change'])) {
+                $error = [];
+                if (empty($_POST['password'])) {
+                    $error['password_new'] = "Mật khẩu không được bỏ trống";
+                } else {
+                    $password = $_POST['password'];
+                    $email = $_SESSION['code_forgot'][1];
+                }
+
+                if (!empty($error)) {
+                    $_SESSION['error'] = $error;
+                } else {
+                    unset($_SESSION['error']);
+                    setPassNew($password, $email);
+                    include "view/change_success.php";
+                    break;
+                }
+            }
+            include "view/change_password.php";
+            break;    
         case 'ct_phim':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];
@@ -268,7 +386,16 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             }
             include "view/thank.php";
             break;
-
+            case 'my_ticket':
+                // echo "<pre>";
+                // print_r($_SESSION['account']);
+                // die();
+                if (isset($_SESSION['account']) && $_SESSION['account'] != "") {
+                    $id_account = $_SESSION['account']['id'];
+                    $list_ticket = loadTicketForClient($id_account);
+                }
+                include "view/my_ticket.php";
+                break;
         default:
             $list_film_cartoon = loadall_film_cartoon();
             $list_film_action = loadall_film_action();

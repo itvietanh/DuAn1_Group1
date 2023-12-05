@@ -37,10 +37,60 @@
             right: 20px
         }
 
-        .ticket-search-form .form-group.large {
-            width: 380px;
+        .ticket-search-form .form-group input {
+            padding: 0 20px;
         }
 
+        .ticket-search-form .form-group.large {
+            width: 340px;
+            justify-content: space-between;
+        }
+        
+        .banner-section {
+            padding: 170px 316px 170px;
+            position: relative;
+        }
+
+        .movie-grid {
+            height: 562px;
+        }
+        
+        .widget-search .btn_search {
+            width: auto;
+            min-width: 150px;
+            outline: none;
+            color: #ffffff;
+            height: 40px;
+            border-radius: 20px;
+            background-image: -webkit-linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
+        }
+
+        .flaticon-loupe {
+            position: absolute;
+            left: 64px;
+            line-height: 40px;
+        }
+
+        .error {
+            color: red;
+            margin: 10px 0 0 0;
+        }
+
+        table {
+      
+        }
+
+        th {
+            border-bottom: 3px solid #fff;
+        }
+
+        td {
+            border: 1px solid #fff;
+        }
+
+        td, th {
+            padding: 20px;
+        }
     </style>
 
 </head>
@@ -68,7 +118,7 @@
     <div class="container">
         <div class="header-wrapper">
             <div class="logo">
-                <a href="index.html">
+                <a href="index.php?act=home">
                     <h5>FPOLY Cinema</h5>
 <!--                    <img src="../assets/images/logo/logo.png" alt="logo">-->
                 </a>
@@ -93,7 +143,7 @@
                     <a href="#0">Xem Thêm</a>
                     <ul class="submenu">
                         <li>
-                            <a href="events.html">Quản lý vé đặt</a>
+                            <a href="index.php?act=my_ticket">Quản lý vé đặt</a>
                         </li>
                     </ul>
                 </li>
@@ -105,7 +155,7 @@
                 if (!isset($_SESSION['account'])) {
                     echo '<div class="login">
                             <li class="header-button pr-0">
-                                <a href="index.php?act=login">Login</a>
+                                <a href="index.php?act=login">Đăng nhập</a>
                             </li>
                         </div>';
                 } else {
