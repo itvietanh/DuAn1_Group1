@@ -329,11 +329,11 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             if (isset($_POST['payment_choose']) && $_POST['payment_choose']) {
                 if ($_POST['payment_choose'] == "payment_cash") {
                     $check_payment = "payment_cash";
-                    // echo "<pre>";
-                    // print_r($_SESSION['seat_order']);
-                    // die();
-                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema);
-                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema);
+                    $path = "./images_qrcode/";
+                    $qrcode = $path.time().".png";
+                    QRcode :: png("$username " . "$email " . "$name_film " . "$room " . "$cinema " . "$order_date " . "$price " . "$seat_order ", $qrcode, 'H', 3, 3);
+                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema ,$qrcode);
+                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode);
                     header("Location: index.php?act=thank");
                     break;
                 }
@@ -379,7 +379,6 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $qrcode = $path.time().".png";
                 QRcode :: png("$username " . "$email " . "$name_film " . "$room " . "$cinema " . "$order_date " . "$price " . "$seat_order ", $qrcode, 'H', 3, 3);
                 insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema, $qrcode);
-                // insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment);
                 // Insert thông tin thanh toán
                 payment_momo($partnerCode, $orderId, $amount, $orderInfo, $orderType, $transId, $payType);
                 sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode);
