@@ -111,6 +111,10 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                     $error['phone'] = "Bạn phải nhập số điện thoại";
                 } else if (is_numeric($_POST['phone'] == false) && $_POST['phone'] == "") {
                     $error['phone'] = "Bạn phải nhập số điện thoại là số!";
+                } else if (!preg_match("/^[a-zA-Z-' ]*$/",$_POST['phone'])) {
+                    $error['phone'] = "Số điện thoại không được nhập ký tự";
+                } else if ($_POST['phone'] < 0 && $_POST['phone'] < 11) {
+                    $error['phone'] = "Số điện thoại không tồn tại";
                 }
                 else {
                     $phone = $_POST['phone'];
@@ -326,14 +330,16 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             $id_cinema = $_SESSION['seat_order'][10];
             $room = $_SESSION['seat_order'][11];
             $cinema = $_SESSION['seat_order'][12];
+            $orderId = time() ."";
             if (isset($_POST['payment_choose']) && $_POST['payment_choose']) {
                 if ($_POST['payment_choose'] == "payment_cash") {
                     $check_payment = "payment_cash";
                     $path = "./images_qrcode/";
                     $qrcode = $path.time().".png";
                     QRcode :: png("$username " . "$email " . "$name_film " . "$room " . "$cinema " . "$order_date " . "$price " . "$seat_order ", $qrcode, 'H', 3, 3);
-                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema ,$qrcode);
-                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode);
+                    insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema ,$qrcode, $orderId);
+                    sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode, $orderId);
+                    unset($_SESSION['seat_order'][2]);
                     header("Location: index.php?act=thank");
                     break;
                 }
@@ -378,22 +384,30 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $path = "./images_qrcode/";
                 $qrcode = $path.time().".png";
                 QRcode :: png("$username " . "$email " . "$name_film " . "$room " . "$cinema " . "$order_date " . "$price " . "$seat_order ", $qrcode, 'H', 3, 3);
-                insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema, $qrcode);
+                insert_orderSeat($seat_order, $id_account, $order_date, $id_showTimeFrame, $show_date, $price, $id_film, $quantity, $check_payment, $id_room, $id_cinema, $qrcode, $orderId);
                 // Insert thông tin thanh toán
                 payment_momo($partnerCode, $orderId, $amount, $orderInfo, $orderType, $transId, $payType);
-                sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode);
+                sendConfirmationEmail($username, $email, $seat_order, $name_film, $time, $price, $quantity, $order_date, $show_date, $room, $cinema, $qrcode, $orderId);
+                unset($_SESSION['seat_order'][2]);
             }
             include "view/thank.php";
             break;
             case 'my_ticket':
-                // echo "<pre>";
-                // print_r($_SESSION['account']);
-                // die();
                 if (isset($_SESSION['account']) && $_SESSION['account'] != "") {
                     $id_account = $_SESSION['account']['id'];
                     $list_ticket = loadTicketForClient($id_account);
                 }
                 include "view/my_ticket.php";
+                break;
+            case 'contact':
+                include "view/contact.php";
+                break;    
+            case 'used_ticket': 
+                if (isset($_SESSION['account']) && $_SESSION['account'] != "") {
+                    $id_account = $_SESSION['account']['id'];
+                    $list_ticket = used_ticket($id_account);
+                }
+                include "view/used_ticket.php";
                 break;
         default:
             $list_film_cartoon = loadall_film_cartoon();

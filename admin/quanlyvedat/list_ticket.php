@@ -1,3 +1,9 @@
+<style>
+    .table {
+        font-size: small;
+    }
+</style>
+
 <main>
     <div class="card">
         <div class="card-body">
@@ -14,12 +20,12 @@
                                     </select> entries</label></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <form action="index.php?act=quanlyphim" method="post">
+                            <form action="index.php?act=quanlyvedat" method="post">
                                 <div id="zero_config_filter" class="dataTables_filter">
                                     <label>Search:
                                         <input type="text" name="kyw" class="form-control form-control-sm" placeholder="" aria-controls="zero_config">
                                     </label>
-                                    <input type="submit" class="btn btn-primary" name="filer" value="Tìm kiếm">
+                                    <input type="submit" class="btn btn-primary" name="filter" value="Tìm kiếm">
                                 </div>
                             </form>
                         </div>
@@ -39,6 +45,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Ngày Đặt</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Số Lượng Vé</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Trạng Thái</th>
+                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Mã vé</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Tổng Giá</th>
                                         <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1">Thao Tác</th>
                                     </tr>
@@ -66,13 +73,17 @@
                                                     <?php
                                                 }
                                                 ?>
+                                            <td><?php echo $order_id ?></td>
                                             <td><?php echo $price ?></td>
-                                            <td>
-                                                <!-- <a href="index.php?act=edit_film&id=<?php echo $id ?>"><input class="btn btn-primary" type="button" name="btn_edit" value="Sửa"></a> | <a onclick="return confirm('Bạn có muốn xóa phim này không?')" href="index.php?act=delete_film&id=<?php echo $id ?>"><input class="btn btn-primary" type="button" name="btn_delete" value="Xóa"></a> -->
+                                            <td style="line-height: 93px;">
                                                 <?php
                                                 if ($status == 'Chờ thanh toán') { ?>
-                                                    <a onclick="return confirm('Bạn có muốn thanh toán vé này không?')" href="index.php?act=confirmPayment&id_order=<?php echo $id_order ?>"><input type="button" class="btn btn-primary" style="margin: 20px 0 0 0" value="Xác nhận thanh toán"></a>
+                                                    <a onclick="return confirm('Bạn có muốn thanh toán vé này không?')" href="index.php?act=confirmPayment&id_order=<?php echo $id_order ?>"><input type="button" class="btn btn-primary" id="btn_confirm" style="margin: 0 0 0 0" value="Xác nhận thanh toán"></a>
                                                 <?php
+                                                } else if ($status == 'Đã thanh toán') {
+                                                    ?>
+                                                    <a onclick="return confirm('Bạn có muốn in vé này không?')" href="index.php?act=process_print&id_order=<?php echo $id_order ?>"><input type="button" class="btn btn-primary" id="btn_confirm" style="margin: 0 0 0 0; background: #fd9351; border: none;" value="Xác nhận in vé"></a>
+                                                    <?php
                                                 }
                                                 ?>
                                             </td>
@@ -84,12 +95,6 @@
 
                             </table>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-5">
-                            <a href="index.php?act=add_film"><input class="btn btn-primary" type="button" name="add_film" value="Thêm Phim"></a>
-                        </div>
-                    </div>
                 </div>
             </div>
 

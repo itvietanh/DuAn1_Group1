@@ -33,8 +33,6 @@
                         ?>
                     </div>
                     <div class="form-group checkgroup">
-                        <!-- <input type="checkbox" id="bal2" required checked>
-                        <label for="bal2">remember password</label> -->
                         <a href="index.php?act=forgot_password" class="forget-pass">Quên mật khẩu?</a>
                     </div>
                     <div class="form-group text-center">

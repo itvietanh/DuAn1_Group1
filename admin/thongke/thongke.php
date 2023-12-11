@@ -55,10 +55,7 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 col-md-5">
-                                <a href="index.php?act=bieudo"><input class="btn btn-primary" type="button" name="bieudo" value="Xem biểu đồ"></a>
-                            </div>
-                            <div class="col-sm-12 col-md-5">
-                                <a href="index.php?act=doanhthu"><input class="btn btn-primary" type="button" name="bieudo" value="Xem doanh thu"></a>
+                                <a href="index.php?act=bieudo"><input class="btn btn-primary" type="button" name="bieudo" value="Xem biểu đồ lượng đặt vé phim"></a>
                             </div>
                         </div>
                     </div>

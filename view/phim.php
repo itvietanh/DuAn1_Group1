@@ -112,7 +112,7 @@
                                                             <div class="thumb">
                                                                 <img src="<?php echo $path ?>assets/images/icons/book.png" alt="icons">
                                                             </div>
-                                                            <span>book ticket</span>
+                                                            <span><a href="index.php?act=ct_phim&id=<?php echo $id ?>">Đặt vé</a></span>
                                                         </a>
                                                     </div>
                                                     <div class="react-item">

@@ -242,7 +242,12 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include 'thongke/bieudo2.php';
             break;
         case 'quanlyvedat':
-            $list_orderTicket = loadOrder();
+            if (isset($_POST['filter']) && $_POST['filter'] != "") {
+                (int)$kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $list_orderTicket = loadOrder($kyw);
             include 'quanlyvedat/list_ticket.php';
             break;
         case 'quanlyvedatofphim':
@@ -298,7 +303,26 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             $list_ticket = loadall_ticket();
             include 'quanlyve/listVe.php';
             break;
-
+        case 'process_print':
+            if (isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $id_order = $_GET['id_order'];
+                $list_orderTicket = print_ticket($id_order);
+                // echo "<pre>";
+                // var_dump($list_orderTicket);die();
+            }
+            include "quanlyvedat/process_printTicket.php";
+            break;    
+        case 'print_ticket':
+            if (isset($_GET['id_order']) && $_GET['id_order'] > 0) {
+                $id_order = $_GET['id_order'];
+                $list_orderTicket = print_ticket($id_order);
+                // echo "<pre>";
+                // var_dump($list_orderTicket);die();
+                update_printTicket($id_order);
+                header("Location: index.php?act=quanlyvedat");
+            }
+            include 'quanlyvedat/print_ticket.php';
+            break;    
         default:
             include 'home.php';
             break;

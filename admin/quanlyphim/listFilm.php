@@ -1,7 +1,6 @@
 <?php if ($_SESSION['account']['role'] == 0) {
 ?>
-    <div class="container">
-        <main>
+        <main style="margin: 30px 30px;">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Quản lý phim</h5>
@@ -74,6 +73,7 @@
                 </div>
             </div>
         </main>
+    <div class="container">
     </div>
 <?php
 } else {

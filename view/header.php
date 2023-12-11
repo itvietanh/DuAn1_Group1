@@ -85,11 +85,15 @@
         }
 
         td {
-            border: 1px solid #fff;
+            border-bottom: 1px solid #fff;
         }
 
         td, th {
             padding: 20px;
+        }
+
+        .contact-info .info-area {
+            background: none;
         }
     </style>
 
@@ -103,8 +107,8 @@
            <span></span>
            <span></span>
        </div>
-   </div> -->
-<!--</div> -->
+   </div>
+</div> -->
 <!-- ==========Preloader==========-->
 <!-- ==========Overlay==========-->
 <div class="overlay"></div>
@@ -140,15 +144,25 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="index.php?act=contact">Liên hệ</a>
+                </li>
+                <li>
                     <a href="#0">Xem Thêm</a>
                     <ul class="submenu">
                         <li>
-                            <a href="index.php?act=my_ticket">Quản lý vé đặt</a>
+                            <?php 
+                                if (!isset($_SESSION['account'])) {
+                                    ?>
+                                        <a href="index.php?act=login">Quản lý vé đặt</a>
+                                    <?php
+                                } else {
+                                    ?>
+                                        <a href="index.php?act=my_ticket">Quản lý vé đặt</a>
+                                    <?php
+                                }
+                            ?> 
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="contact.html">Liên hệ</a>
                 </li>
             </ul>
             <?php

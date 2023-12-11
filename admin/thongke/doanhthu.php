@@ -39,7 +39,7 @@ $listDay = getDayInMonth();
         ]);
 
         var options = {
-            title: 'Thống Kê'
+            title: 'Thống Kê Doanh Thu'
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('piechart'));
